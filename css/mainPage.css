@@ -1,0 +1,160 @@
+header{
+    z-index: 9999 !important;
+    width: 100%;
+    background-color: rgb(255, 255, 255) !important;      
+}
+
+.svg {
+    transform: translateY(-0.15rem);
+    margin: 0 0.5rem;
+
+}
+
+.ltr-dir {
+    direction: ltr;
+}
+
+.rtl-dir {
+    direction: rtl;
+}
+
+/*....................Search Box..................... */
+
+.search-box {
+    border: 1px solid #2769B3;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    color: 2e2e2e;
+}
+
+.search-box:focus {
+    border: 2px solid #2769B3;
+}
+
+::placeholder {
+    font-size: 0.75rem;
+    font-weight: 100;
+    color: #000;
+}
+
+:-ms-input-placeholder {
+    font-size: 0.75rem;
+    font-weight: 100;
+    color: #000;
+}
+
+::-ms-input-placeholder {
+    font-size: 0.75rem;
+    font-weight: 100;
+    color: #000;
+}
+
+
+/*..................Porduct Card....................... */
+.porduct-card {
+    width: 18rem;
+    height: 22.75rem;
+    transition: all 0.3s ease;
+}
+
+.porduct-card img {
+    width: 100%;
+    height: 12.187rem;
+    object-fit: cover;
+
+}
+
+.porduct-card:hover {
+    transform: translateY(-5px);
+
+}
+
+.bookmark-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.bookmark-icon img {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+
+}
+
+/* icons:   12px * 12px   */
+.icon-12 {
+    width: 0.75rem !important;
+    height: 0.75rem !important;
+}
+
+/* icons:   16px * 16px  */
+.icon-16{
+    width:  1rem !important;
+    height: 1rem !important;
+}
+
+/* ........................Footer................... */
+footer{
+    box-shadow: 0 -1px 4px rgb(0 0 0 / 18%);
+    z-index: 9999 !important;
+    width: 100%;
+    position: sticky; 
+    bottom: 0; 
+    background-color: rgb(255, 255, 255) !important; 
+    
+}
+
+
+
+/* ........User Porduct Information........... */
+
+
+
+
+
+
+
+/* ...........Responsive............ */
+
+@media (max-width: 575.98px) {
+    .logo {
+        width: 9rem;
+    }
+    footer nav p {
+        font-size: 0.5rem !important;
+    }
+}
+
+@media (min-width: 575.98px) {
+    .search-box {
+        padding: 0 4rem !important;
+
+    }
+    footer nav p {
+        font-size: 0.75rem !important;
+    }
+}
+
+@media (min-width: 767.98px) {
+    .logo {
+        width: 9rem;
+    }
+}
+
+@media (min-width: 991.98px) {
+    .logo {
+        width: 12rem;
+    }
+    header {
+        position: sticky; 
+        top: 0; 
+    }
+}
+
+@media (min-width: 1200px) {}
+
