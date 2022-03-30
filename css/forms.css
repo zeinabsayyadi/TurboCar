@@ -1,0 +1,218 @@
+html, body,main{
+    height: 100%;
+}
+
+body{
+    margin: 0% !important;
+}
+*{
+    font-family: iranyekan;
+}
+
+::placeholder{
+    color: rgba(172, 169, 241, 1) !important;
+}
+
+.yMargin{
+    margin-top: 12rem;
+}
+
+.reg25{
+    font-size: 1.56rem;
+    font-weight: normal;
+}
+
+.hrSide{
+    width: 50%;
+}
+
+
+/*___________responsive____________*/
+
+@media screen and (min-width:1240px){
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+    .sidebar {
+        padding-top: 10%;
+        height:100vh;
+        overflow:auto;
+    }
+    .formsStyle{
+        height: 4rem;
+        width: 32rem;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        border-radius: 0.625rem;
+    }
+
+    .loginTiter{
+        font-size: 1.75rem;
+        font-weight: bold;
+    } 
+    .hrSide{
+        width: 50%;
+    }
+    .smtop{
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:1240px){
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .formsStyle{
+        height: 4rem;
+        width: 32rem;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        border-radius: 0.625rem;
+    }
+    .sidebar {
+        padding-top:18%;
+        height:100%;
+        overflow:auto;
+    }
+
+    .sideCarphoto{
+        width: 18.75rem;
+        height: 18.75rem;
+    }
+
+    .loginTiter{
+        font-size: 1.75rem;
+        font-weight: bold;
+    } 
+    .hrSide{
+        width: 50%;
+    }
+    .smtop{
+        display: none !important;
+    }
+
+}
+
+@media screen and (max-width:992px){
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .formsStyle{
+        height: 3rem;
+        width: 16rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 0.625rem;
+    }
+    .loginTiter{
+        font-size: 1.125rem;
+        font-weight: bold;
+    }
+    .sidebar {
+        padding-top:20%;
+        height:100%;
+        overflow:auto;
+    }
+
+    .sideCarphoto{
+        padding-top: 15%;
+        width: 15.5rem;
+        height: 15.5rem;
+    }
+
+    .hrSide{
+        width: 70%;
+    }
+    .smtop{
+        display: none !important;
+    }
+    
+}
+
+@media screen and (max-width:768px){
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .formsStyle{
+        height: 3rem;
+        width: 16rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 0.625rem;
+    }
+    .loginTiter{
+        font-size: 1.125rem;
+        font-weight: bold;
+    }
+    .sidebar {
+        padding-top: 21%;
+        height:100%;
+        overflow:auto;
+    }
+
+    .sideCarphoto{
+        padding-top: 10%;
+        width: 14rem;
+        height: 14rem;
+    }
+
+    .hrSide{
+        width: 90%;
+    }
+    .smtop{
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:576px){
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formsStyle{
+        height: 3rem;
+        width: 11rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 0.625rem;
+    }
+    .loginTiter{
+        font-size: 0.875rem;
+        font-weight: bold;
+    }
+    .sidebar {
+        display: none !important;
+    }
+
+    .sideCarphoto{
+        padding-top: 10%;
+        width: 14rem;
+        height: 14rem;
+    }
+
+    .hrSide{
+        width: 100%;
+    }
+    .loginPart{
+        justify-content: center;
+        width: 100%;
+        margin-top: 10%;    }
+    main{
+        display: flex;
+        flex-direction: column !important;
+    }
+    .smtop{
+        display: flex !important;
+    }
+    
+}
+    
+
