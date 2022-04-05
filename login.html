@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,30 +20,6 @@
                 <hr class="bg-white col-12 hrSide">
             </div>
         </section>
-        <section class="loginPart d-flex flex-column col-lg-8 col-md-8 col-xxl-8 col-xl-8 col-sm-8 align-items-center yMargin"> 
-            <div class="pb-5">
-                <p style="color: var(--bs-primary-200);" class="loginTiter">لطفا برای ورود شماره تلفن همراه خود را وارد کنید</p>
-                <hr style="background-color: var(--bs-primary-200)">
-            </div>
-            <div class="col-8 phonenumForm">
-                <p class="text-end my-2 fw-medium fw-medium" style="font-size: 1.125rem;">شماره تماس</p>
-                <form class="d-flex flex-column align-items-center">
-                    <input id="phone" name="phone" type="tel" class = "border-1 bg-transparent col-12  formsStyle" style = "border-color: var(--bs-primary-200); ">
-                    <button type="submit" id="phoneNumInptbtn" class = "border-0 my-4 align-items-center formsStyle" style="background-color: var(--bs-secondary-100);">وارد شوید</button>
-                </form>
-            </div>
-            <div class="col-8 codeInterForm d-none">
-                <p class="text-end my-2 me-lg-5 pe-lg-5" style="font-size: 1.125rem;">لطفا شماره تلفن ارسالی به شماره 0912 435 2323 را وارد کنید</p>
-                <p class="text-end my-2 me-lg-5 pe-lg-5 fw-bold fs-5" style="color: var(--bs-primary-200);" >ویرایش شماره</p>
-                <form class="d-flex flex-column align-items-center">
-                    <input type="number" id = "sendedCode" class="border-1 bg-transparent col-12  formsStyle " style = "border-color: var(--bs-primary-200); " placeholder="- - - - -">
-                    <button type="submit" id="phoneNumInptbtn" class = "border-0 my-4 align-items-center formsStyle" style="background-color: var(--bs-secondary-100);">ثبت کد</button>
-                </form>
-
-            </div>
-
-        </section>
-        <!---->
         <section class="d-flex flex-column sidebar col-lg-4 col-md-4" style = "background-color: var(--bs-primary-200);">
             <div class="d-flex flex-column  align-items-center">
                 <p class="reg25 text-white">توربوکار</p>
@@ -54,13 +30,32 @@
                 <img src="./img/svg/sideCarphoto.svg" alt="sideCarphoto" class="sideCarphoto" >
             </div>
         </section>
+        <section class="loginPart d-flex flex-column col-lg-8 col-md-8 col-xxl-8 col-xl-8 col-sm-8 align-items-center yMargin"> 
+            <div class="pb-5 loginTitrPart">
+                <p style="color: var(--bs-primary-200);" class="loginTitr">لطفا برای ورود شماره تلفن همراه خود را وارد کنید</p>
+                <hr style="background-color: var(--bs-primary-200)">
+            </div>
+            <div class="col-8 phonenumForm">
+                <!--fix this field to be align with forms in any screen size-->
+                <p class="my-2 fw-medium fw-medium" style="font-size: 1.125rem;">شماره تماس</p>
+                <form class="d-flex flex-column align-items-center">
+                    <input id="phone" type="tel" class = "phone border-1 bg-transparent col-12  formsStyle text-start" style = "border-color: var(--bs-primary-200);" placeholder="09123456789">
+                    <div class="phNResponseMsg">
+                        <!--after user enterd phone number a msg will be visible here to know if its correct or not-->
+                    </div>
+                    <button type="submit"  class = "phoneNumInptbtn border-0 my-4 align-items-center formsStyle" style="background-color: var(--bs-secondary-100);">وارد شوید</button>
+                </form>
+            </div>
+
+        </section>
+        <!---->
     </main>
-    <script src="./js/login.js"></script>
+    <script src="./js/login.js" type="module"></script>
     <script src="./node_modules/intl-tel-input/build/js/intlTelInput.js"></script>
     <script>
         var input = document.querySelector("#phone");
-        
         window.intlTelInput(input, {
+        initialCountry: "IR",
         // allowDropdown: false,
         // autoHideDialCode: false,
         // autoPlaceholder: "off",
@@ -74,15 +69,16 @@
         //   });
         // },
         // hiddenInput: "full_number",
-        initialCountry: "IR",
+        //initialCountry: "IR",
         // localizedCountries: { 'de': 'Deutschland' },
         // nationalMode: false,
         // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-        // placeholderNumberType: "MOBILE",
+        //placeholderNumberType: "MOBILE",
         // preferredCountries: ['cn', 'jp'],
         // separateDialCode: true,
         utilsScript: "node_modules/intl-tel-input/build/js/utils.js",
         });
     </script>
+   
 </body>
 </html>
