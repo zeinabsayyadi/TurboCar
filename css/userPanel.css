@@ -1,0 +1,52 @@
+
+header{
+    z-index: 9999 !important;
+    width: 100%;
+    background-color: rgb(255, 255, 255) !important;      
+}
+
+.svg {
+    transform: translateY(-0.15rem);
+    margin: 0 0.5rem;
+
+}
+
+.ltr-dir {
+    direction: ltr;
+}
+
+.rtl-dir {
+    direction: rtl;
+}
+
+/*_______________Search Box_________________*/
+
+.search-box {
+    border: 1px solid #2769B3;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    color: 2e2e2e;
+}
+
+.search-box:focus {
+    border: 2px solid #2769B3;
+}
+
+::placeholder {
+    font-size: 0.75rem;
+    font-weight: 100;
+    color: #000;
+}
+
+:-ms-input-placeholder {
+    font-size: 0.75rem;
+    font-weight: 100;
+    color: #000;
+}
+
+::-ms-input-placeholder {
+    font-size: 0.75rem;
+    font-weight: 100;
+    color: #000;
+}
