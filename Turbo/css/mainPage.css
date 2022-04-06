@@ -1,0 +1,353 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+.hide {
+    display: none;
+}
+
+header {
+    z-index: 9999 !important;
+    width: 100%;
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.svg {
+    transform: translateY(-0.15rem);
+    margin: 0 0.5rem;
+
+}
+
+.ltr-dir {
+    direction: ltr;
+}
+
+.rtl-dir {
+    direction: rtl;
+}
+
+/*....................Search Box..................... */
+
+.search-box {
+    border: 1px solid #2769B3;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    color: 2e2e2e;
+   
+}
+
+.search-box:focus {
+    border: 2px solid #2769B3;
+}
+
+::placeholder {
+    font-size: 0.75rem;
+    font-weight: 100;
+    color: #000;
+}
+
+:-ms-input-placeholder {
+    font-size: 0.75rem;
+    font-weight: 100;
+    color: #000;
+}
+
+::-ms-input-placeholder {
+    font-size: 0.75rem;
+    font-weight: 100;
+    color: #000;
+}
+
+/* ...... Dropdown searching filter........... */
+
+.select {
+    position: relative;
+    overflow: hidden;
+    width: 330px;
+    height: 100%;
+    border-bottom: 0px;
+    border-radius: 3px;
+    font-size: 16px;
+    
+}
+
+.scroll-options {
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.title,
+.placeholder {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0.7rem 2rem 0 0;
+    height: 3.25rem;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.select input{
+    display: none !important;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0 ;
+    cursor: pointer;
+}
+
+.placeholder {
+    position: relative;
+    z-index: 0;
+    opacity: 1;
+    /* background-color: #000; */
+    width: 100%;
+    color: var(--bs-primary-200);
+    border: 2px solid var(--bs-primary-200);
+    border-radius: 0.5rem;
+}
+.border-none{
+    border-bottom-left-radius:  0 ;
+    border-bottom-right-radius:  0 ;
+}
+.option {
+    display: none;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+    transition: all 1s ease-out;
+}
+
+.title {
+    position: relative;
+    background-color: #f6f6ff;
+    z-index: 2;
+    transition: background 0.3s ease-out;
+}
+
+.title:hover {
+    color: rgb(255, 255, 255);
+    background: var(--bs-primary-200) !important;
+    box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.show {
+    display: block;
+}
+
+
+
+/*..................Porduct Card....................... */
+h2::before {
+    content: ' ';
+    display: block;
+    width: 30%;
+    height: 1.5px;
+    background-color: var(--bs-natural-100);
+    position: absolute;
+    top: 1.25rem;
+    left: 9.375rem;
+}
+
+h2::after {
+    content: ' ';
+    display: block;
+    width: 30%;
+    height: 1.5px;
+    background-color: var(--bs-natural-100);
+    position: absolute;
+    top: 1.25rem;
+    right: 9.375rem;
+}
+
+.porduct-card {
+    width: 18rem;
+    height: 22.75rem !important;
+    margin: 0 .5rem !important;
+    transition: all 0.3s ease;
+}
+
+.porduct-card img {
+    width: 100%;
+    height: 12.187rem;
+    object-fit: cover;
+
+}
+
+.porduct-card:hover {
+    transform: translateY(-5px);
+
+}
+
+.bookmark-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.bookmark-icon img {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+
+}
+
+.show-all{
+    width: fit-content;
+    
+}
+.icon-12 {
+    width: 0.75rem !important;
+    height: 0.75rem !important;
+}
+
+
+.icon-16 {
+    width: 1rem !important;
+    height: 1rem !important;
+}
+
+/* ........................Footer................... */
+footer {
+    box-shadow: 0 -1px 4px rgb(0 0 0 / 18%);
+    z-index: 9999 !important;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    background-color: rgb(255, 255, 255) !important;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* ...........Responsive............ */
+
+@media (max-width: 991.98px) {
+
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    .porduct-card img {
+        height: 9rem;
+    }
+
+    .porduct-card {
+        width: 18rem;
+        height: 20rem !important;
+    }
+
+}
+
+@media (max-width: 575.98px) {
+    .logo {
+        width: 9rem;
+    }
+
+    footer nav p {
+        font-size: 0.5rem !important;
+    }
+
+    h2 {
+        font-weight: bold;
+    }
+
+    h2::before {
+        width: 20%;
+        top: 0.8rem;
+        left: 2rem;
+    }
+
+    h2::after {
+        width: 20%;
+        top: 0.8rem;
+        right: 2rem;
+    }
+
+}
+
+
+@media (min-width: 575.98px) {
+    .search-box {
+        padding: 0 4rem !important;
+    }
+
+    footer nav p {
+        font-size: 0.75rem !important;
+    }
+
+    h2::before {
+        width: 25%;
+        left: 2rem;
+    }
+
+    h2::after {
+        width: 25%;
+        right: 2rem;
+    }
+
+}
+
+@media (min-width: 767.98px) {
+    .logo {
+        width: 9rem;
+    }
+
+    h2::before {
+        width: 30%;
+    }
+
+    h2::after {
+        width: 30%;
+    }
+}
+
+@media (min-width: 991.98px) {
+    .logo {
+        width: 12rem;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+}
+
+@media (min-width: 1199.98px) {
+    h2::before {
+        width: 30%;
+        left: 7.5rem;
+
+    }
+
+    h2::after {
+        right: 7.5rem;
+    }
+}
+
+@media (min-width: 1399.98px) {
+    h2::before {
+        left: 9.375rem;
+
+    }
+
+    h2::after {
+        right: 9.375rem;
+    }
+}
