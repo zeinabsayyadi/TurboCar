@@ -5,14 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/forms.css">
-    <link rel="stylesheet" href="./node_modules/intl-tel-input/build/css/intlTelInput.css">
-    <link rel="stylesheet" href="./node_modules/intl-tel-input/build/css/demo.css">
-
+    <link rel="stylesheet" href="./css/login.css">
     <title>login</title>
 </head>
 <body>
-    <main>
+    <main class="d-flex">
         <section class="smtop justify-content-center pt-2" style = "background-color: var(--bs-primary-200);">
             <div class="d-flex flex-column  align-items-center">
                 <p class="reg25 text-white">توربوکار</p>
@@ -30,55 +27,9 @@
                 <img src="./img/svg/sideCarphoto.svg" alt="sideCarphoto" class="sideCarphoto" >
             </div>
         </section>
-        <section class="loginPart d-flex flex-column col-lg-8 col-md-8 col-xxl-8 col-xl-8 col-sm-8 align-items-center yMargin"> 
-            <div class="pb-5 loginTitrPart">
-                <p style="color: var(--bs-primary-200);" class="loginTitr">لطفا برای ورود شماره تلفن همراه خود را وارد کنید</p>
-                <hr style="background-color: var(--bs-primary-200)">
-            </div>
-            <div class="col-8 phonenumForm">
-                <!--fix this field to be align with forms in any screen size-->
-                <p class="my-2 fw-medium fw-medium" style="font-size: 1.125rem;">شماره تماس</p>
-                <form class="d-flex flex-column align-items-center">
-                    <input id="phone" type="tel" class = "phone border-1 bg-transparent col-12  formsStyle text-start" style = "border-color: var(--bs-primary-200);" placeholder="09123456789">
-                    <div class="phNResponseMsg">
-                        <!--after user enterd phone number a msg will be visible here to know if its correct or not-->
-                    </div>
-                    <button type="submit"  class = "phoneNumInptbtn border-0 my-4 align-items-center formsStyle" style="background-color: var(--bs-secondary-100);">وارد شوید</button>
-                </form>
-            </div>
-
+        <section class="loginPart d-flex flex-column col-lg-8 col-md-8 col-xxl-8 col-xl-8 col-sm-8 align-items-center yMargin">   
         </section>
-        <!---->
     </main>
-    <script src="./js/login.js" type="module"></script>
-    <script src="./node_modules/intl-tel-input/build/js/intlTelInput.js"></script>
-    <script>
-        var input = document.querySelector("#phone");
-        window.intlTelInput(input, {
-        initialCountry: "IR",
-        // allowDropdown: false,
-        // autoHideDialCode: false,
-        // autoPlaceholder: "off",
-        // dropdownContainer: document.body,
-        // excludeCountries: ["IR"],
-        // formatOnDisplay: false,
-        // geoIpLookup: function(callback) {
-        //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-        //     var countryCode = (resp && resp.country) ? resp.country : "";
-        //     callback(countryCode);
-        //   });
-        // },
-        // hiddenInput: "full_number",
-        //initialCountry: "IR",
-        // localizedCountries: { 'de': 'Deutschland' },
-        // nationalMode: false,
-        // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-        //placeholderNumberType: "MOBILE",
-        // preferredCountries: ['cn', 'jp'],
-        // separateDialCode: true,
-        utilsScript: "node_modules/intl-tel-input/build/js/utils.js",
-        });
-    </script>
-   
+    <script src="./js/login.js"></script>
 </body>
 </html>

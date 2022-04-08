@@ -51,6 +51,9 @@
    --bs-natural-200 : #464646;
    --bs-natural-300 : #2e2e2e;
 
+   /* warning color */
+   --bs-warning-100 : #FF5A43;
+
    /* gradient color */
    --bs-login-btn-gradient : linear-gradient(83.07deg, rgb(84, 82, 246 , 1), rgba(94, 92, 255, 1));
    --bs-search-btn-gradient : linear-gradient(86.51deg, rgb(13, 163, 56 , 1), rgba(14, 176, 60, 1));
