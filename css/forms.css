@@ -1,0 +1,185 @@
+
+::placeholder{
+    color: rgba(172, 169, 241, 1) !important;
+}
+
+.form-group,  .formBtn{
+    margin: 1rem auto;
+}
+
+.form-group label{
+    color: var(--bs-natural-300);
+    margin-bottom: 1rem;
+}
+
+input , select {
+    font-size: 1.125rem;
+    color: var(--bs-natural-200) !important;
+}
+input:focus , select:focus{
+    box-shadow: none !important;
+    border-color: var(--bs-primary-200) !important;
+}
+
+/*____*/
+
+.Neon {
+    color: var(--bs-primary-200);
+    position: relative;   
+    width: fit-content !important;
+
+}
+.Neon * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.Neon-input-dragDrop {
+    display: flex;
+    width: 7.25rem;
+    height: 7.25rem;
+    color: var(--bs-primary-200);
+    background: transparent;
+    border: 0.125rem dashed var(--bs-primary-100);
+    border-radius: 0.5rem;
+    -webkit-transition: box-shadow 0.3s, border-color 0.3s;
+    -moz-transition: box-shadow 0.3s, border-color 0.3s;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    justify-content: center;
+    align-items: center;
+}
+
+.Neon-input-inner{
+    align-self: center;
+    font-size: 2.25rem;
+    width: fit-content;
+    height: fit-content;
+}
+
+
+/*____*/
+
+/*___________responsive____________*/
+
+@media screen and (min-width:1240px){
+    .formsStyle{
+        height: 4rem !important;
+        width: 32rem !important;
+        border-radius: 0.625rem !important;
+    }
+    .form-group label , form label{
+        font-size: 1.125rem;
+    }
+    .phonenNumTag{
+        font-size: 1.125rem;
+    }
+    textarea{
+        width: 32rem;
+        height: 8rem;
+    }
+}
+
+@media screen and (max-width:1240px){
+    .formsStyle{
+        height: 4rem !important;
+        width: 32rem !important;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        border-radius: 0.625rem !important;
+    }
+    .phonenNumTag{
+        font-size: 1.125rem;
+    }
+    textarea{
+        width: 32rem;
+        height: 8rem;
+    }
+
+}
+
+@media screen and (max-width:992px){
+    .formsStyle{
+        height: 3rem !important;
+        width: 16rem !important;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 0.625rem !important;
+    }
+
+    .phonenNumTag{
+        font-size: 0.875rem;
+    }
+    
+    .input-group{
+        display: flex;
+        flex-direction: row !important;
+        white-space: nowrap !important;
+        max-width: fit-content;
+    }
+    .input-group input {
+        font-size: 0.875rem ;
+    }
+    textarea{
+        width: 16rem;
+        height: 6rem;
+    }
+}
+
+@media screen and (max-width:768px){
+
+    .formsStyle{
+        height: 3rem !important;
+        width: 16rem !important;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 0.625rem !important;
+    }
+    .phonenNumTag{
+        font-size: 0.875rem;
+    }
+
+    .input-group{
+        display: flex;
+        flex-direction: row !important;
+        white-space: nowrap !important;
+        max-width: fit-content;
+    }
+    .input-group input {
+        font-size: 0.875rem ;
+    }
+    textarea{
+        width: 16rem;
+        height: 6rem;
+    }
+}
+
+@media screen and (max-width:576px){
+    .formsStyle{
+        height: 3rem !important;
+        width: 11rem !important;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: 0.625rem !important;
+    }
+
+    .phonenNumTag{
+        font-size: 0.75rem;
+    }
+    .input-group{
+        display: flex;
+        flex-direction: row !important;
+        white-space: nowrap !important;
+        max-width: fit-content;
+    }
+    .input-group input{
+        font-size: 0.5rem;
+        width: min-content;
+    }
+    textarea{
+        width: 11rem;
+        height: 6rem;
+    }
+    
+}
+    
+

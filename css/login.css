@@ -28,11 +28,6 @@ body{
     width: 50%;
 }
 
-.formB{
-    border: 1px !important;
-    border-color: var(--bs-secondary-100) !important;
-}
-
 /*___________responsive____________*/
 
 @media screen and (min-width:1240px){
@@ -44,13 +39,6 @@ body{
         padding-top: 10%;
         height:100vh;
         overflow:auto;
-    }
-    .formsStyle{
-        height: 4rem;
-        width: 32rem;
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
-        border-radius: 0.625rem;
     }
 
     .loginTitr{
@@ -64,9 +52,6 @@ body{
         display: none !important;
     }
 
-    .phonenNumTag{
-        font-size: 1.125rem;
-    }
 }
 
 @media screen and (max-width:1240px){
@@ -75,13 +60,6 @@ body{
         flex-direction: row;
     }
 
-    .formsStyle{
-        height: 4rem;
-        width: 32rem;
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
-        border-radius: 0.625rem;
-    }
     .sidebar {
         padding-top:18%;
         height:100%;
@@ -104,9 +82,6 @@ body{
         display: none !important;
     }
 
-    .phonenNumTag{
-        font-size: 1.125rem;
-    }
 
 }
 
@@ -127,11 +102,6 @@ body{
         font-size: 1.125rem;
         font-weight: bold;
     }
-    .sidebar {
-        padding-top:20%;
-        height:100%;
-        overflow:auto;
-    }
 
     .sideCarphoto{
         padding-top: 15%;
@@ -145,9 +115,7 @@ body{
     .smtop{
         display: none !important;
     }
-    .phonenNumTag{
-        font-size: 0.875rem;
-    }
+    
     
 }
 
@@ -157,13 +125,6 @@ body{
         flex-direction: row;
     }
 
-    .formsStyle{
-        height: 3rem;
-        width: 16rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        border-radius: 0.625rem;
-    }
     .loginTitr{
         font-size: 1.125rem;
         font-weight: bold;
@@ -186,25 +147,14 @@ body{
     .smtop{
         display: none !important;
     }
-    
-    .phonenNumTag{
-        font-size: 0.875rem;
-    }
 }
 
 @media screen and (max-width:576px){
     main{
         display: flex;
-        flex-direction: column;
+        flex-direction: column !important;
     }
 
-    .formsStyle{
-        height: 3rem;
-        width: 11rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        border-radius: 0.625rem;
-    }
     .loginTitr{
         font-size: 0.875rem;
         font-weight: bold;
@@ -225,18 +175,13 @@ body{
     .loginPart{
         justify-content: center;
         width: 100%;
-        margin-top: 10%;    }
-    main{
-        display: flex;
-        flex-direction: column !important;
+        margin-top: 10%;  
     }
+
     .smtop{
         display: flex !important;
     }
 
-    .phonenNumTag{
-        font-size: 0.75rem;
-    }
     
 }
     

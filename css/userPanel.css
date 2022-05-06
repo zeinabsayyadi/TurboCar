@@ -1,9 +1,83 @@
+html, body,main{
+    height: 100%;
+}
+
+body{
+    margin: 0% !important;
+}
+
+*{
+    font-family: iranyekan;
+}
+
+.sidebar ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.sideMenu li{
+   width: 100%  !important;
+
+}
+
+.innerLi{
+    width: 80%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.innerLi hr {
+    margin-bottom: 0%;
+}
+
+.exhabitBioFromEdit .form-group textarea{
+    background-color: brown;
+}
+
+.active{
+    background-color: var(--bs-primary-100) !important;
+}
+
+
+.side-btn p {
+    color: white;
+    margin: 1rem 0;
+}
+
+hr{
+    background-color: white !important;
+}
+::placeholder{
+    color: rgba(172, 169, 241, 1) !important;
+}
 
 header{
     z-index: 9999 !important;
     width: 100%;
     background-color: rgb(255, 255, 255) !important;      
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+  }
+.sticky + main {
+    padding-top: 8.75rem;
+}
+
+.sidebar {
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    top: 6.5rem;
+    right: 0;
+    overflow-x: hidden;
+    padding-bottom: 9rem!important;
+    border-top-left-radius: 0.625rem;
+    border-bottom-left-radius: 0.625rem;
+}
+
+
 
 .svg {
     transform: translateY(-0.15rem);
@@ -19,9 +93,54 @@ header{
     direction: rtl;
 }
 
+.panelContent{
+    overflow: scroll;
+}
+
+.panelContentLoad , .formContentLoad{
+    display: flex !important;
+    flex-direction: column;
+}
+.panelContentClr , .formContentClr{
+    display: none !important;
+}
+
+.custom-control-input-success:checked ~ .custom-control-label::before {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+}
+
+/* Large toggl switches */
+.custom-switch-lg .custom-control-label::before {
+    left: -2.25rem;
+    width: 3rem;
+    border-radius: 1.5rem;
+}
+
+.custom-switch-lg .custom-control-label::after {
+    top: calc(.25rem + 3px);
+    left: calc(-2.25rem + 4px);
+    width: calc(1.5rem - 6px);
+    height: calc(1.5rem - 6px);
+    border-radius: 1.5rem;
+}
+
+.custom-switch-lg .custom-control-input:checked ~ .custom-control-label::after {
+    transform: translateX(1.4rem);
+}
+
+.custom-switch-lg .custom-control-label::before {
+    height: 1.5rem;
+}
+
+.custom-switch-lg .custom-control-label {
+    padding-left: 1.5rem;
+    line-height: 1.7rem;
+}
+
 /*_______________Search Box_________________*/
 
-.search-box {
+.search-box { 
     border: 1px solid #2769B3;
     outline: none;
     height: 3rem;
@@ -49,4 +168,673 @@ header{
     font-size: 0.75rem;
     font-weight: 100;
     color: #000;
+}
+
+/*________ section titles____________*/
+
+.sectionTitles {
+    margin-top: 1.8rem;
+    text-align: center;
+    position: relative;
+}
+
+.sectionTitles :before {
+    border-top: 0.125rem solid var(--bs-natural-300);
+    content:" ";
+    margin: 0 auto; /* this centers the line to the full width specified */
+    position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+    top: 50%; left: 0; right: 0; bottom: 0;
+    width: 95%;
+    height: 1px;
+    z-index: -1;
+}
+
+ .sectionTitles span { 
+    /* to hide the lines from behind the text, you have to set the background color the same as the container */ 
+    color: var(--bs-natural-200);
+    padding: 0 1rem; 
+    font-size: 1.75rem;
+    background-color: white;
+    width: fit-content;
+} 
+
+
+/*___________sections of Panel________*/
+
+        /*user Information */
+
+.userInfo , .carInfo {
+    background-color: rgba(248, 253, 255, 1);
+    width: 100%;
+    border: solid #000;
+    border-width: 2px 2px;
+    border-color: var(--bs-primary-100) !important;
+    margin-bottom: 3rem !important;
+}
+.infoLine{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.infoSubject{
+    color: var(--bs-natural-100);
+}
+.InfoData{
+    color: var(--bs-natural-200);
+}
+
+      /*ads management*/
+.userAdsCard{
+    margin-left: 1rem;
+    height: fit-content;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    border-left: solid 5px var(--bs-secondary-200) !important;
+}
+
+
+.manageAD hr{
+    background-color: var(--bs-natural-200) !important;
+    width: 100%;
+}
+
+.innerTitel{
+    font-size:1.125rem ;
+    font-weight: 500;
+    color: var(--bs-natural-200);
+    margin-bottom:0.87rem ;
+}
+
+  /* product card */
+  .porduct-card {
+    width: 18rem;
+    height: 22.75rem !important;
+    margin: 0 .5rem !important;
+    transition: all 0.3s ease;
+}
+
+.porduct-card img {
+    width: 100%;
+    height: 12.187rem;
+    object-fit: cover;
+
+}
+
+.porduct-card:hover {
+    transform: translateY(-5px);
+
+}
+
+.bookmark-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.bookmark-icon img {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+
+}
+
+.show-all{
+    width: fit-content;
+    
+}
+.icon-12 {
+    width: 0.75rem !important;
+    height: 0.75rem !important;
+}
+
+
+.icon-16 {
+    width: 1rem !important;
+    height: 1rem !important;
+}
+
+/*___________responsive____________*/
+
+@media screen and (min-width:1240px){
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+    .profPhoto{
+        width: 6.25rem;
+        height: 6.25rem;
+    }
+    .proftxt{
+        font-size: 1rem;
+
+    }
+    .sidebar {
+        min-width: max-content;
+        width: 23rem;
+        padding-top: 1.5rem;
+    }
+
+    .panelContent{
+        margin-right: 23rem;
+    }
+    .sidebarTxt{
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+    .sideIcon{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    
+    .overlaySidebarBtn , .closeSidebarBtn{
+        display: none;
+    }
+
+    .sectionTitles span {
+        font-size: 1.75rem;
+    }
+    .userInfo * ,.carInfo *, .manageADinner * , .userAds *{
+       font-size: 1.125rem;
+       font-weight: 400;
+   }
+
+   .textInfo{
+    width: 50%;
+    padding: 3.5rem;
+    }
+    .profileAndEdit{
+    width: 50%;
+    padding: 3.5rem;
+    }
+    .profileAndEdit img{
+    width: 12rem;
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    } 
+
+    .userInfoTopProf{
+        display: none;
+    }
+
+    .userAdsCard{
+        flex-direction: row !important;
+        width: fit-content;
+        padding-left: 1rem !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .userAdsCard img {
+        width: 22.5rem;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .userAdsCard div{
+        margin-right: 0.5rem!important;
+        margin-left: 0.5rem!important;
+    }
+    .sectionsButton {
+        border-radius: 0.625rem; 
+        border-color: var(--bs-primary-200); 
+        color: var(--bs-primary-200); 
+        width: 11rem; 
+        height: 3.125rem;
+        margin-top: 0.5rem !important; 
+    }
+    .greenButton {
+        border-radius: 0.625rem; 
+        border-width: 0;
+        background-color: var(--bs-secondary-200);
+        color: #FFFFFF; 
+        width: 11rem; 
+        height: 3.125rem;
+    }
+    .manageADinner{
+        padding: 2.5rem 5rem;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+    }
+    .loginTitr{
+        font-size: 1.75rem;
+        font-weight: bold;
+    } 
+}
+
+@media screen and (max-width:1240px){
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .profPhoto{
+        width: 6.25rem;
+        height: 6.25rem;
+    }
+    .proftxt{
+        font-size: 1rem;
+
+    }
+
+    .sidebar {
+        min-width: max-content;
+        width: 23rem;
+        padding-top: 1.5rem;
+        height:100vh;
+        overflow:auto;
+    }
+
+    .panelContent{
+        margin-right: 23rem;
+    }
+    .sidebarTxt{
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+    .sideIcon{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .overlaySidebarBtn , .closeSidebarBtn{
+        display: none;
+    }
+
+    .sectionTitles span {
+        font-size: 1.25rem;
+    }
+    .userInfo * ,.carInfo *, .manageADinner * , .userAds *{
+        font-size: 1.125rem;
+        font-weight: 400;
+    }
+
+    .textInfo{
+        width: 60%;
+        padding: 2.5rem;
+    }
+    .profileAndEdit{
+        width: 40%;
+        padding: 2.5rem;
+    }
+    .profileAndEdit img{
+        width: 10rem;
+        height: inherit;
+        margin-left: auto;
+        margin-right: auto;
+    } 
+    .userInfoTopProf{
+        display: none;
+    }
+
+    .userAdsCard{
+        flex-direction: column !important;
+        width: fit-content;
+        padding-bottom: 1rem !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .userAdsCard img {
+        width: 17.5rem;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 0px !important;
+    }
+    .userAdsCard div{
+        margin-right: 0.5rem!important;
+        margin-left: 0.5rem!important;
+    }
+    .sectionsButton {
+        border-radius: 0.625rem; 
+        border-color: var(--bs-primary-200); 
+        color: var(--bs-primary-200); 
+        width: 11rem; 
+        height: 2.8rem;
+        margin-top: 0.5rem !important; 
+    }
+    .greenButton {
+        border-radius: 0.625rem; 
+        border-width: 0;
+        background-color: var(--bs-secondary-200);
+        color: #FFFFFF; 
+        width: 11rem; 
+        height: 2.8rem;
+        margin-top: 0.5rem !important; 
+    }
+    .manageADinner{
+        padding: 2.5rem 5rem;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width:992px){
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+    .profPhoto{
+        width: 6.25rem;
+        height: 6.25rem;
+    }
+    .proftxt{
+        font-size: 1rem;
+
+    }
+
+    .sidebar {
+        min-width: max-content;
+        width: 21.5rem;
+        padding-top: 1.5rem;
+        height:100vh;
+        overflow:auto;
+    }
+
+    .panelContent{
+        margin-right: 21.5rem;
+    }
+    .sidebarTxt{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .sideIcon{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+
+    .overlaySidebarBtn , .closeSidebarBtn{
+        display: none;
+    }
+
+    .sectionTitles span {
+        font-size: 1rem;
+    }
+    .userInfo , .carInfo{
+        flex-direction: column !important;
+        align-items: center;
+
+    }
+    .userInfo * ,.carInfo *, .manageADinner * , .userAds *{
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .textInfo{
+        width: 80%;
+    }
+
+    .profileAndEdit img{
+       display: none !important;
+    } 
+
+    .userInfoTopProf{
+        display: block;
+        padding: 2rem ;
+    }
+
+    .userAdsCard img {
+        width: 17.5rem;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 0px !important;
+    }
+    .userAdsCard div{
+        margin-right: 0.5rem!important;
+        margin-left: 0.5rem!important;
+    }
+    .sectionsButton {
+        border-radius: 0.625rem; 
+        border-color: var(--bs-primary-200); 
+        color: var(--bs-primary-200); 
+        width: 11rem; 
+        height: 2.8rem;
+        margin-top: 0.5rem !important;  
+    }
+    .greenButton{
+        border-radius: 0.625rem; 
+        border-width: 0;
+        background-color: var(--bs-secondary-200);
+        color: #FFFFFF; 
+        width: 11rem; 
+        height: 2.8rem;
+        margin-top: 0.5rem !important;  
+    }
+    .manageAdImg{
+        display: none !important;
+    }
+    .manageAdTopImg{
+        display: block !important;
+        height: fit-content;
+        width: inherit;
+    }
+    .manageAdTopSec{
+        width: 100%;
+    }
+    .manageADinner{
+        padding: 2rem 4rem;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width:768px){
+    main{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+
+    .profPhoto{
+        width: 6.25rem;
+        height: 6.25rem;
+    }
+    .proftxt{
+        font-size: 1rem;
+
+    }
+
+    .sidebar {
+        min-width: max-content;
+        width: 19rem;
+        padding-top: 3.5rem;
+        overflow:auto;
+    }
+
+    .panelContent{
+        margin-right: 19rem;
+    }
+    .sidebarTxt{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .sideIcon{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .sticky + main {
+        padding-top: 10rem;
+    }
+
+    .overlaySidebarBtn , .closeSidebarBtn{
+        display: none;
+    }
+
+    .userInfo , .carInfo{
+        flex-direction: column !important;
+        align-items: center;
+
+    }
+
+    .userInfo *{
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .textInfo , .profileAndEdit{
+        min-width: 80%;
+    
+    }
+
+    .profileAndEdit img{
+       display: none !important;
+    } 
+
+    .userInfoTopProf{
+        display: block;
+        padding: 1.5rem;
+    }
+
+    .sectionsButton {
+        border-radius: 0.625rem; 
+        border-color: var(--bs-primary-200); 
+        color: var(--bs-primary-200); 
+        width: 11rem; 
+        height: 2.8rem;
+        margin-top: 0.5rem !important;   
+    }
+    .greenButton {
+        border-radius: 0.625rem; 
+        border-width: 0;
+        background-color: var(--bs-secondary-200);
+        color: #FFFFFF;
+        width: 11rem; 
+        height: 2.8rem;
+        margin-top: 0.5rem !important;   
+    }
+    .manageAdImg{
+        display: none !important;
+    }
+    .manageAdTopImg{
+        display: block !important;
+        height: fit-content;
+        width: inherit;
+    }
+    .manageAdTopSec{
+        width: 100%;
+    }
+    .manageADinner{
+        padding:2rem 4rem;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width:576px){
+    main{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+    .profPhoto{
+        width: 4.75rem;
+        height: 4.75rem;
+    }
+    .proftxt{
+        font-size: 0.875rem;
+
+    }
+    .sidebar {
+        min-width: max-content;
+        z-index: 4;
+        display: none;
+        position: absolute;
+        top:0%;
+        width: 19.5rem !important;
+        padding-top: 1.5rem;
+        overflow:auto;
+        padding-top: 14rem;
+    }
+    .sidebarTxt{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .sideIcon{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .sticky + main {
+        padding-top: 12rem;
+    }
+   
+    .overlaySidebarBtn {
+        display: block;
+    }
+    .panelContent {
+        contain: none !important;
+        margin-right: auto;
+        width: 100%;
+    }
+    .userInfo * ,.carInfo *, .manageADinner * , .userAds *{
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+    .userInfo{
+        flex-direction: column !important;
+
+    }
+    .textInfo , .profileAndEdit{
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .profileAndEdit {
+        min-width: max-content;
+    }
+    .profileAndEdit img{
+       display: none !important;
+    } 
+
+    .userInfoTopProf{
+        display: block;
+        padding: 1rem;
+    }
+
+    .sectionsButton {
+        border-radius: 0.625rem; 
+        border-color: var(--bs-primary-200); 
+        color: var(--bs-primary-200); 
+        width: 16.5rem; 
+        height: 2.8rem;
+        margin-top: 0.5rem !important;
+        margin-left: auto;
+        margin-right: auto;   
+    }
+    .greenButton{
+        border-radius: 0.625rem; 
+        background-color: var(--bs-secondary-200);
+        color: #FFFFFF;
+        border-width: 0; 
+        width: 16.5rem; 
+        height: 2.8rem;
+        margin-top: 0.5rem !important;
+        margin-left: auto;
+        margin-right: auto;   
+    }
+    .manageAdImg{
+        display: none !important;
+    }
+    .manageAdTopImg{
+        display: block !important;
+        height: fit-content;
+        width: inherit;
+    }
+    .manageAdTopSec{
+        width: 100%;
+    }
+    .manageADinner{
+        padding:0.5rem 0.5rem;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+    }
+   
 }

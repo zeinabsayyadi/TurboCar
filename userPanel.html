@@ -6,17 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/userPanel.css">
-    <title>userPanel.html</title>
+    <link rel="stylesheet" href="./css/forms.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="./css/splide/splide.min.css">
+    <script src="./js/splide/splide-extension-grid.min.js"></script>
+    <script src="./js/splide/splide-extension-auto-scroll.min.js"></script>
+    <script src="./js/splide/splide.min.js"></script>
+
+    <title>userPanel</title>
 </head>
 <body>
-    <header class="container-fluid shadow-sm p-3">
+    <header class="container-fluid shadow-sm p-3 sticky">
 
         <div class="row d-flex justify-content-between ">
 
             <!-- Logo -->
             <div class="col-6 col-md-2 ">
                 <a href="#">
-                    <img src="./img/svg/logo.svg" alt="logo" class="logo">
+                    <img  src="./img/svg/logo.svg" alt="logo" class="logo">
                 </a>
             </div>
 
@@ -67,67 +77,2141 @@
                     <input type="" class="search-box rounded px-5" placeholder="جست و جو در بین تمامی محصولات......">
                 </div>
             </div>
-
-
         </div>
+          <!-- open overlay Nav button -->
+          <button class="btn overlaySidebarBtn" style="color: var(--bs-natural-200); width: max-content;">☰</button>  
+          <button class="btn closeSidebarBtn " style="color: var(--bs-natural-200); width: max-content; display: none;">✕</button> 
     </header>
     <main>
-        <section class="sidebar">
-            <div>
-                <img src="./img/svg/profilePh.svg" alt="profile photo">
-                <span class="name"></span>
-            </div>
-            <ul>
-                <li>
-                    <div>
-                        <img src="" alt="">
-                        <p></p>
+        <!-- sidebar -->
+        <section class="sidebar  my-1 rounded-start justify-content-center" style="background-color: var(--bs-primary-200);">
+            <ul class="sideMenu align-self-center my-2" style="display: list-item;">
+                <li class="mb-5  bg-transparent border-0 col-12">
+                    <div  class="d-flex flex-column align-items-center justify-content-center">
+                        <img  src="./img/svg/profilePh.svg" alt="profile photo" class="profPhoto">
+                        <p class="py-2 text-white proftxt">علیرضا جعفری</p>
                     </div>
-                    <hr>
                 </li>
-                <li>
-                    <div>
-                        <img src="" alt="">
-                        <p></p>
+                <li class="EditInfoSideOption my-1 bg-transparent border-0 d-flex justify-content-center">
+                    <div class="innerLi">
+                        <div class="side-btn d-flex flex-row align-items-center border-0 bg-transparent "> 
+                            <img class="sideIcon" src="./img/svg/editInfoN.svg" alt="editInfo">
+                            <p class="px-3 sidebarTxt">ویرایش اطلاعات</p>   
+                        </div>
+                        <hr>
                     </div>
-                    <hr>
                 </li>
-                <li>
-                    <div>
-                        <img src="" alt="">
-                        <p></p>
+                
+                <li class="viewAdsSideOption my-1 bg-transparent border-0 d-flex justify-content-center">
+                    <div class="innerLi">
+                        <div class="side-btn d-flex flex-row align-items-center border-0 bg-transparent"> 
+                            <img class="sideIcon" src="./img/svg/advertisement.svg" alt="advertisement">
+                            <p class="px-3 sidebarTxt">آگهی ها</p>
+                        </div>
+                        <hr>
                     </div>
-                    <hr>
                 </li>
-                <li>
-                    <div>
-                        <img src="" alt="">
-                        <p></p>
+                <li class="ExhabitRegSideOption my-1 bg-transparent border-0 d-flex justify-content-center">
+                    <div class="innerLi">
+                        <div class="side-btn d-flex flex-row align-items-center border-0 bg-transparent"> 
+                            <img class="sideIcon" src="./img/svg/exhibitorRegistration.svg" alt="exhibitorRegistration">
+                            <p class="px-3 sidebarTxt">  ثبت نمایشگاه</p>
+                        </div>
+                        <hr>
                     </div>
-                    <hr>
                 </li>
-                <li>
-                    <div>
-                        <img src="" alt="">
-                        <p></p>
+                <li class="SavedAdsSideOption my-1 bg-transparent border-0 d-flex justify-content-center">
+                    <div class="innerLi">
+                        <div class="side-btn d-flex flex-row align-items-center border-0 bg-transparent"> 
+                            <img class="sideIcon" src="./img/svg/favorites.svg" alt="favorites">
+                            <p class="px-3 sidebarTxt" >مورد علاقه ها</p>
+                        </div>
+                        <hr>
                     </div>
-                    <hr>
+                </li>
+                <li class="chatSideOption my-1 bg-transparent border-0 d-flex justify-content-center">
+                    <div class="innerLi">
+                        <div class="side-btn d-flex flex-row align-items-center border-0 bg-transparent"> 
+                            <img class="sideIcon" src="./img/svg/chat.svg" alt="chat">
+                            <p class="px-3 sidebarTxt">چت</p>
+                        </div>
+                        <hr>
+                    </div>
+                </li>
+                <li class="lastSeenSideOption my-1 bg-transparent border-0 d-flex justify-content-center">
+                    <div class="innerLi">
+                        <div class="side-btn d-flex flex-row align-items-center border-0 bg-transparent"> 
+                            <img class="sideIcon" src="./img/svg/history.svg" alt="history">
+                            <p class="px-3 sidebarTxt">بازدید های اخیر</p>
+                        </div>
+                        <hr>
+                    </div>
+                </li>
+                <li class="exiteSideOption mt-5 d-flex justify-content-center">
+                    <div class="side-btn d-flex flex-row align-items-center border-0 bg-transparent innerLi"> 
+                        <img class="sideIcon" src="./img/svg/exit.svg" alt="exit">
+                        <p class="px-3 sidebarTxt">خروج از پنل کاربری</p>
+                    </div>      
                 </li>
             </ul>
+        </section>
 
-            <div>
-                <div>
-                    <img src="" alt="">
-                    <p></p>
+        <!--user panel contents-->
+        <section class="panelContent container d-flex flex-column pb-5">
+               <!--
+                   the proper content for items will be generate and display here after click on them !
+               -->
+
+            <!--car image -->
+            <div class="beforAnyAct m-5 d-flex panelContentLoad">
+                <img src="./img/svg/sideCarphoto.svg" alt="" class="mx-auto my-5">
+            </div>
+            <!-- User Info -->
+            <div class=" userInfoForm mx-lg-5 mx-md-4 mx-sm-3 panelContentClr" style="margin-bottom: 7.5rem;">
+                <h2 class="sectionTitles mx-3 my-5"><span class="mx-auto">اطلاعات کاربری</span></h2>
+                <div class="userInfo d-flex flex-row rounded-3 ">
+                    <div class="userInfoTopProf  mx-auto">
+                        <img src="./img/svg/profilePh.svg" alt="profile" style="border-radius: 50%;" class="mb-2">
+                    </div>
+                    <div class="textInfo d-flex flex-column ">
+                        <div class="infoLine d-flex flex-row justify-content-between">
+                            <div class="infoSubject">
+                                <p>نام و نام خانوداگی</p> 
+                            </div>
+                            <div class="InfoData">
+                                <p>علیرضا جعفری</p>
+                            </div>
+                        </div>
+                        <div class="infoLine d-flex flex-row justify-content-between my-4">
+                            <div class="infoSubject">
+                                <p>شماره موبایل</p>
+                            </div>
+                            <div class="InfoData">
+                                <p>09123456789</p>
+                            </div>
+                        </div>
+                        <div class="infoLine d-flex flex-row justify-content-between my-4">
+                            <div class="infoSubject">
+                                <p>تاریخ تولد</p>
+                            </div>
+                            <div class="InfoData">
+                                <p>1370/10/23</p>
+                            </div>
+                        </div>
+                        <div class="infoLine d-flex flex-row justify-content-between my-4">
+                            <div class="infoSubject">
+                                <p>کد ملی / گذرنامه</p>
+                            </div>
+                            <div class="InfoData">
+                                <p>3510054532</p>
+                            </div>
+                        </div>
+                        <div class="infoLine d-flex flex-row justify-content-between my-4">
+                            <div class="infoSubject">
+                                <p>ایمیل</p>
+                            </div>
+                            <div class="InfoData">
+                                <p> alirezajafari@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profileAndEdit d-flex flex-column">
+                        <img src="./img/svg/profilePh.svg" alt="profile" style="border-radius: 50%;" class="mb-2">
+                        <button type="button" class="btn userInfoEditeBtn sectionsButton" >ویرایش اطلاعات</button>
+                    </div>
                 </div>
-                <hr>
             </div>
 
-        </section>
-        <section class="panelContent">
+            <!-- car exhabition info-->
+            <div class="carExhabitionInfo mx-lg-5 mx-md-4 mx-sm-3 panelContentClr" style="margin-bottom: 7.5rem;">
+                <h2 class="sectionTitles mx-3 my-5"><span class="mx-auto">اطلاعات نمایشگاه</span></h2>
+                <div class="carInfo d-flex flex-row rounded-3">
+                    <div class="userInfoTopProf  mx-auto">
+                        <img src="./img/svg/profilePh.svg" alt="profile" style="border-radius: 50%;" class="mb-2">
+                    </div>
+                    <div class="textInfo d-flex flex-column ">
+                        <div class="infoLine d-flex flex-row justify-content-between">
+                            <div class="infoSubject">
+                                <p>نام نمایشگاه</p> 
+                            </div>
+                            <div class="InfoData">
+                                <p>اتوگالری جعفری</p>
+                            </div>
+                        </div>
+                        <div class="infoLine d-flex flex-row justify-content-between my-4">
+                            <div class="infoSubject">
+                                <p> تلفن ثابت</p>
+                            </div>
+                            <div class="InfoData">
+                                <p>077123456789</p>
+                            </div>
+                        </div>
+                        <div class="infoLine d-flex flex-row justify-content-between my-4">
+                            <div class="infoSubject">
+                                <p> شماره ثبت</p>
+                            </div>
+                            <div class="InfoData">
+                                <p>ب-2345</p>
+                            </div>
+                        </div>
+                        <div class="infoLine d-flex flex-row justify-content-between my-4">
+                            <div class="infoSubject">
+                                <p>آدرس</p>
+                            </div>
+                            <div class="InfoData">
+                                <p>شیراز _زرهی_کوچه هشت</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profileAndEdit d-flex flex-column">
+                        <img src="./img/svg/exhabitionInfo.svg" alt="profile" style="border-radius: 50%;" class="mb-2">
+                        <button type="button" class="btn carExhabitionEditInfoBtn sectionsButton" >ویرایش اطلاعات</button>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Edid User Info-->
+            <div class="EditeUserInfoForm mx-lg-5 mx-md-4 mx-sm-3 panelContentClr">
+                <h2 class="sectionTitles mx-3 my-5"> <span class="mx-auto">ویرایش اطلاعات کاربری</span></h2>
+
+                <form class="editUserInfo d-flex flex-column justify-content-center">
+                    <div class="form-group">
+                      <label for="exampleInputTxt">نام و نام خانوداگی</label>
+                      <input type="text" class="form-control formsStyle border-1 bg-transparent editUserInfoName" name="editUserInfoName" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="exampleInputTel">شماره تماس</label>
+                            <div class="input-group form-control formsStyle border-1 bg-transparent d-flex flex-row" dir="ltr" style="border-color: var(--bs-primary-100); align-items: center; white-space: nowrap;">
+                              <div class="input-group-addon me-2 d-inline-block">
+                                <img src="./img/svg/iranFlag.svg" alt=""> 
+                              </div>
+                              <input type="tel" class="border-0 d-inline-block editUserInfoPhoneNumber" name="editUserInfoPhoneNumber" style="align-items: center;" id="exampleInputTel" placeholder="09123456789">
+                            </div>
+                          </div>
+                    </div>
+              
+                    <div class="form-group">
+                      <label for="exampleInputNatId">شماره ملی / گذرنامه</label>
+                      <input type="tel" class="form-control formsStyle border-1 bg-transparent editUserInfoNationalId" name="editUserInfoNationalId" style="direction: ltr; border-color: var(--bs-primary-100)" id="exampleInputNatId" >
+                    </div>
+                    
+                    <div class="form-group ">
+                      <label for="exampleInputEmail1">ایمیل</label>
+                      <input type="email" class="form-control formsStyle border-1 bg-transparent editUserInfoEmail"  name="editUserInfoEmail" id="exampleInputEmail1" style="direction: ltr; border-color: var(--bs-primary-100)" aria-describedby="emailHelp" placeholder="example@gmail.com">
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="birthData">تاریخ تولد</label>
+                      <div class="formsStyle d-flex flex-row justify-content-between align-items-center my-2" id="birthData" >
+                        <div class="my-2">
+                          <label for="day">روز</label>
+                        <select class="form-control  border-1 bg-transparent"  id="day" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                          <option selected> 1</option>
+                          <option value="1">2</option>
+                          <option value="2">3</option>
+                          <option value="3"> 4</option>
+                        </select>
+                        </div>
+                        <div class="my-2">
+                          <label for="month">ماه</label>
+                          <select class="form-control  border-1 bg-transparent"  id="month" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                            <option selected> 1</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                          </select>
+                        </div>
+                        <div class="my-2">
+                          <label for="year">سال</label>
+                          <select class="form-control  border-1 bg-transparent my-1"  id="year" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                            <option selected>1385</option>
+                            <option value="1">1384</option>
+                            <option value="2">1376</option>
+                            <option value="3">1301</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn editedUserInfoSaveBtn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت اطلاعات</button>
+                    <small class="emptyFiledErr"></small>
+                    <button type="submit" class="btn editedUserInfoBackBtn formBtn formsStyle bg-transparent" style="border-color: var(--bs-natural-200) !important; color: var(--bs-natural-200) !important;">برگشت</button>
+                </form>
+
+            </div>
+            <!--Edit Exhabition-->
+            <div class="EditeExhabitInfoForm mx-lg-5 mx-md-4 mx-sm-3 panelContentClr">
+                <h2 class="sectionTitles mx-3 my-5"> <span class="mx-auto"> ویرایش اطلاعات نمایشگاه</span></h2>
+                <form action="" class="editExhabitionInfo container mt-5" style="width: fit-content;">
+                    <fieldset class="exhabitInfoEdit d-flex flex-column align-items-center formContentLoad">
+                        <div class="form-group">
+                            <label for="exampleInputTxt">نام نمایشگاه</label>
+                            <input type="text" class="form-control formsStyle border-1 bg-transparent" name="editExhabitName" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                        </div>
+                        <div class="form-group">
+                            <label for="selectCarBrand">استان</label>
+                            <select class="form-control formsStyle border-1 bg-transparent"  id="selectCarBrand" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                              <option value="0" selected>بوشهر</option>
+                              <option value="1">تهران</option>
+                              <option value="2">فارس</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectCarBrand">شهر</label>
+                            <select class="form-control formsStyle border-1 bg-transparent"  id="selectCarBrand" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                              <option value="0" selected>شیراز</option>
+                              <option value="1">کازرون</option>
+                              <option value="2">مرودشت</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputTxt">آدرس نمایشگاه</label>
+                            <input type="text" class="form-control formsStyle border-1 bg-transparent" name="editExhabitAddress"  style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="exampleInputTel">شماره تماس ثابت</label>
+                                <div class="input-group form-control formsStyle border-1 bg-transparent d-flex flex-row" dir="ltr" style="border-color: var(--bs-primary-100); align-items: center; white-space: nowrap;">
+                                  <div class="input-group-addon me-2 d-inline-block">
+                                    <img src="./img/svg/iranFlag.svg" alt=""> 
+                                  </div>
+                                  <input type="tel" class="border-0 d-inline-block" name="editExhabitPhone" style="align-items: center;" id="exampleInputTel" placeholder="02123456789">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputTxt">شماره ثبت</label>
+                            <input type="text" class="form-control formsStyle border-1 bg-transparent" name="editExhabitDocNum" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                        </div>
+                        <button type="submit" class="btn editExhabitinfoSaveBtn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت اطلاعات</button>
+                        <button type="submit" class="btn editExhabitInfoBackBtn formBtn formsStyle bg-transparent" style="border-color: var(--bs-natural-200) !important; color: var(--bs-natural-200) !important;"> برگشت به مرحله قبل</button>
+                    </fieldset>
+                    <fieldset  class="uploadDocumentsEdit d-flex flex-column align-items-end formContentClr">
+                        <p>اطلاعات شما به هیچ وجه به دیگران نمایش داده نمیشود</p>
+                        <div class="form-group ">
+                            <label for="adImgs">اسکن کارت ملی خود را بارگذاری کنید</label>
+                            <div class="Neon Neon-theme-dragdropbox bg-transparent ">
+                              <input style="z-index: 999; opacity: 0; width: 7.25rem; height :7.25rem; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="ownerNationalId" id="filer_input0" multiple="multiple" type="file" >
+                              <div class="Neon-input-dragDrop">
+                                <span class="Neon-input-inner">+</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="adImgs">اسکن پروانه کسب خود را بارگذاری کنید</label>
+                            <div class="Neon Neon-theme-dragdropbox bg-transparent ">
+                              <input style="z-index: 999; opacity: 0; width: 7.25rem; height :7.25rem; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="businessLicense" id="filer_input1" multiple="multiple" type="file" >
+                              <div class="Neon-input-dragDrop">
+                                <span class="Neon-input-inner">+</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="adImgs"> در صورتی که نمایشگاه شما دارای لوگو است آن را در این قسمت بارگذاری کنید</label>
+                            <div class="Neon Neon-theme-dragdropbox bg-transparent ">
+                              <input style="z-index: 999; opacity: 0; width: 7.25rem; height :7.25rem; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="exhabitLogo" id="filer_input2" multiple="multiple" type="file" >
+                              <div class="Neon-input-dragDrop">
+                                <span class="Neon-input-inner">+</span>
+                              </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn formBtn uploadDocSaveBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ثبت مدارک</button>
+                        <button type="submit" class="btn formBtn uploadDocBackBtn formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                    </fieldset>
+                    
+                    <fieldset class="exhabitBioFromEdit d-flex flex-column align-items-center formContentClr">
+                        <div class="form-group">
+                            <label for="textArea">توضیحات</label>
+                            <div>
+                              <textarea name="bio" id="" cols="58" rows="5" class="bg-transparent" style="border-color: var(--bs-primary-100); border-radius: 0.625rem;"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn formBtn exhabitBioSaveBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت نمایشگاه</button>
+                        <button type="submit" class="btn formBtn exhabitBioBackBtn formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                    </fieldset>
+                </form>
+            </div>
+            <!--user Ads-->
+            <div class="d-flex flex-column userAds panelContentClr" style="margin-bottom: 2rem!important;">
+                <button type="button" class="registerADBtn greenButton my-3 mx-auto">ثبت آگهی جدید</button>
+                <div class="userAdsCard d-flex flex-row justify-content-between">
+                    <img src="./img/svg/fidiliti.svg" alt="">
+                    <div class=" d-flex flex-column" style="margin-right: 3.125rem">
+                        <div class="infoLine d-flex flex-row justify-content-between">
+                            <div class="infoSubject">
+                                <p>نام خودرو</p> 
+                            </div>
+                            <div class="InfoData pe-2">
+                                <p> فیدیلیتی</p>
+                            </div>
+                        </div>
+                        <div class="infoLine d-flex flex-row justify-content-between">
+                            <div class="infoSubject">
+                                <p>تاریخ انتشار آگهی</p>
+                            </div>
+                            <div class="InfoData pe-2">
+                                <p>1401/01/20</p>
+                            </div>
+                        </div>
+                        <div class="infoLine d-flex flex-row justify-content-between">
+                            <div class="infoSubject">
+                                <p> وضعیت آگهی</p>
+                            </div>
+                            <div class="InfoData activeAd pe-2">
+                                <p>فعال</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn sectionsButton userAdsBtn" >مدیریت آگهی</button>
+                    <!-- border-2 bg-transparent p-xlg-3 p-lg-3 p-md-2  mx-auto mt-5 -->
+
+                </div>
+
+            </div>
+            <!--manage Ad-->
+            <div class="manageAD panelContentClr mx-lg-5 mx-md-4 mx-sm-3 mb-5">
+                <h2 class="sectionTitles mx-3 my-5"><span class="mx-auto"> مدیریت آگهی</span></h2>
+                <div class="manageADinner d-flex flex-column">
+                    <img src="./img/svg/fidiliti.svg" alt="" class="manageAdTopImg rounded-2" style="display: none; height:fit-content; border-radius: 10px; margin-bottom:1.75rem;">
+                    <p class="innerTitel">خودروی فیدیلیتی مدل 98</p>
+                    <div class=" d-flex flex-row justify-content-between">
+                        <div class=" d-flex flex-column manageAdTopSec ms-1 col-4">
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p>شماره تماس</p> 
+                                </div>
+                                <div class="pe-2" style="color: var(--bs-secondary-200);">
+                                    <p> 09123456789</p>
+                                </div>
+                            </div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p>آدرس</p> 
+                                </div>
+                                <div class="pe-2" style="color: var(--bs-secondary-200);">
+                                    <p>خلیلی <img src="./img/svg/map.svg" alt=""></p>
+                                </div>
+                            </div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p>وضعیت آگهی</p> 
+                                </div>
+                                <div class="form-check form-switch custom-control custom-switch custom-switch-lg m-0">
+                                    <input class="form-check-input custom-control-input custom-control-input-success" type="checkbox" id="flexSwitchCheckDefault">
+                                </div>
+                            </div>
+                            <div class="infoLine d-flex flex-column justify-content-between">
+                                <div class="infoSubject">
+                                    <p>توضیحات</p> 
+                                </div>
+                                <div class="InfoData pe-2">
+                                    <p>
+                                        ماشین در حد نو روغنش تازه عوض شده گیربکسشم عالیه بدنه هم خش نداره
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center mx-1">
+                            <img src="./img/svg/fidiliti.svg" alt="" class="manageAdImg rounded-2" style="width: 18rem; height:fit-content; border-radius: 10px; margin-top: auto; margin-bottom: auto;">
+                        </div>
+                    </div>
+                   
+                    <p class="innerTitel" style="margin-top:1.75rem;">مشخصات فنی</p>
+                        <div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p> برند خودرو</p> 
+                                </div>
+                                <div class="pe-2">
+                                    <p>فیدیلیتی</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p> سال تولید</p> 
+                                </div>
+                                <div class="pe-2">
+                                    <p>1398</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p> مدل خودرو</p> 
+                                </div>
+                                <div class="pe-2">
+                                    <p>پرایم (پنج نفره)</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p> کیلومتر</p> 
+                                </div>
+                                <div class="pe-2">
+                                    <p>4000</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p>گیربکس</p> 
+                                </div>
+                                <div class="pe-2">
+                                    <p>دنده اتوماتیک</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p>سوخت</p> 
+                                </div>
+                                <div class="pe-2">
+                                    <p>بنزین</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p>رنگ</p> 
+                                </div>
+                                <div class="pe-2">
+                                    <p>سیاه</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p> وضعیت بدنه</p> 
+                                </div>
+                                <div class="pe-2">
+                                    <p>سالم</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div>
+                            <div class="infoLine d-flex flex-row justify-content-between">
+                                <div class="infoSubject">
+                                    <p>بیمه شخص ثالث</p> 
+                                </div>
+                                <div class="pe-2">
+                                    <p>کمتر از یک ماه</p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    
+                    <button type="buttton" class="btn manageAdBtn sectionsButton mx-auto">ویرایش اطلاعات</button>
+                </div>
+            </div>
+            <!--register/edit Ad-->
+            <div class="registerAD panelContentClr mx-lg-5 mx-md-4 mx-sm-3 mb-5">
+                <h2 class="sectionTitles  mx-3 my-5"><span class="mx-auto registerADTitle"> ثبت آگهی خودرو</span></h2>
+                <div>
+                    <form class="AdEditForm container mt-5" style="width: fit-content;">
+                        <fieldset class="carAdForm1 formContentLoad">
+                            <div class="form-group">
+                              <label for="selectCarBrand">گروه بندی</label>
+                              <select class="form-control formsStyle border-1 bg-transparent"  id="selectCarBrand" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                                <option value="0" selected>خودرو</option>
+                                <option value="1">خودرو کلاسیک</option>
+                                <option value="2">سنگین و نیمه سنگین</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="selectCarBrand"> برند خودرو</label>
+                              <select class="form-control formsStyle border-1 bg-transparent"  id="selectCarBrand" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                                <option value="0" selected>آریسان</option>
+                                <option value="1"> آئودی</option>
+                                <option value="2">  فیدیلیتی  </option>
+                              </select>
+                            </div>
+                    
+                            <div class="form-group">
+                              <label for="selectCarBrand"> مدل خودرو </label>
+                              <select class="form-control formsStyle border-1 bg-transparent"  id="selectCarBrand" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                                <option value="0" selected>پرایم(5نفره)</option>
+                                <option value="1"> پرایم(7نفره)</option>
+                                <option value="2">  معمولی :) </option>
+                              </select>
+                            </div>
+                    
+                            <div class="form-group">
+                              <label for="selectCarBrand">  سال تولید</label>
+                              <select class="form-control formsStyle border-1 bg-transparent"  id="selectCarBrand" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                                <option value="0" selected>1401</option>
+                                <option value="1"> 1400</option>
+                                <option value="2">1399</option>
+                              </select>
+                            </div>
+                    
+                            <div class="form-group d-flex flex-column">
+                              <label for="exampleInputTxt">کیلومتر</label>
+                              <input type="number" name="kilometre" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt">
+                            </div>
+                    
+                            <div class="form-group d-flex flex-column">
+                              <label for="exampleInputTxt">گیربکس</label>
+                              <input type="text" name="gearbox" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt">
+                            </div>
+                    
+                            <div class="form-group">
+                              <label for="selectCarBrand"> سوخت</label>
+                              <select class="form-control formsStyle border-1 bg-transparent"  id="selectCarBrand" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                                <option value="0" selected>بنزین</option>
+                                <option value="1"> گاز</option>
+                                <option value="2">گازوئیل</option>
+                                <option value="3">بنزین/گاز</option>
+                              </select>
+                            </div>
+                    
+                            <div class="form-group d-flex flex-column">
+                              <label for="exampleInputTxt">رنگ</label>
+                              <input type="text" name="carColor" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt" >
+                            </div>
+                    
+                            <div class="form-group d-flex flex-column">
+                              <label for="exampleInputTxt">وضعیت بدنه</label>
+                              <input type="text" name="carBody" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt" >
+                            </div>
+                    
+                            <div class="form-group d-flex flex-column">
+                              <label for="exampleInputTxt">مهلت بیمه </label>
+                              <input type="text" name="insurance" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt" >
+                            </div>
+                            <button type="submit" class="btn formBtn carAdForm1RegBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت اطلاعات</button>
+                            <button type="submit" class="btn formBtn carAdForm1BackBtn formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به آگهی ها</button>
+                    
+                        </fieldset>
+                        <fieldset class="carAdForm2 formContentClr">
+                            <div class="form-group d-flex flex-column">
+                              <label for="exampleInputTxt">عنوان آگهی</label>
+                              <input type="text" name="AdTitle" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt" >
+                            </div>
+                    
+                            <div class="form-group">
+                              <label for="textArea">توضیحات</label>
+                              <div>
+                                <textarea name="textarea" id="" cols="58" rows="5" class="bg-transparent" style="border-color: var(--bs-primary-100); border-radius: 0.625rem;"></textarea>
+                              </div>
+                            </div>
+                    
+                            <div class="form-group d-flex flex-column">
+                              <label for="exampleInputTxt">آدرس</label>
+                              <input type="text" name="address" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt" >
+                            </div>
+                    
+                            <div class="form-group">
+                              <label for="exampleInputTel">شماره تماس</label>
+                              <div class="input-group form-control formsStyle border-1 bg-transparent d-flex flex-row" dir="ltr" style="border-color: var(--bs-primary-100); align-items: center; white-space: nowrap;">
+                                <div class="input-group-addon me-2 d-inline-block">
+                                  <img src="./img/svg/iranFlag.svg" alt=""> 
+                                </div>
+                                <input type="tel" name="phoneNum" class="border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="09123456789">
+                              </div>
+                            </div>
+                            <div class="form-group ">
+                              <label for="adImgs">افزودن عکس</label>
+                              <div class="Neon Neon-theme-dragdropbox bg-transparent ">
+                                <input style="z-index: 999; opacity: 0; width: 7.25rem; height :7.25rem; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="carPic" id="filer_input3" multiple="multiple" type="file" >
+                                <div class="Neon-input-dragDrop">
+                                  <span class="Neon-input-inner">+</span>
+                                </div>
+                              </div>
+                            </div>
+                    
+                            <div class="form-group d-flex flex-column">
+                              <label for="exampleInputTxt">قیمت</label>
+                              <input type="number" name="carPrice" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt" >
+                            </div>
+                    
+                            <div class="form-group">
+                              <div class="form-check form-check-inline my-2">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="inlineRadio1">فروش عادی</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                <label class="form-check-label" for="inlineRadio1">فروش ویژه</label>
+                              </div>
+                            </div>
+                            <button type="submit" class="btn formBtn carAdForm2RegBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت اطلاعات</button>
+                            <button type="submit" class="btn formBtn carAdForm2BackBtn formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                        </fieldset>
+                        <div class="afterAdRegister formContentClr border-2 rounded-2 bg-transparent align-self-center px-2 py-4"  style="border-color: var(--bs-secondary-200);">
+                            <p style="color: var(--bs-natural-100);">آگهی شما با موفقیت ثبت شد</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+             <!--register car exhabit-->
+             <div class="exhabitRegister mx-lg-5 mx-md-4 mx-sm-3 panelContentClr">
+                <div class="d-flex flex-column container align-items-center my-5"> 
+                    <p>همین الان نمایشگاه خود را ثبت کنید ...</p>
+                    <img src="./img/svg/sideCarphoto.svg" alt="" class="mx-auto my-3">
+                    <button type="button" class="greenButton registerExhabit">ثبت نمایشگاه</button>
+                </div>
+
+            </div>
+            <!--register car forms-->
+            <div  class="exhabitRegisterForms mx-lg-5 mx-md-4 mx-sm-3 panelContentClr">
+                
+                <form action=" " class="container mt-5" style="width: fit-content;">
+                    <fieldset class="loginPHoneEnter formContentLoad">
+                        <div class="pb-5 loginTitrPart">
+                            <p class="loginTitr" style="color: var(--bs-primary-200)">لطفا برای ورود شماره تلفن خود را وارد کنید </p>
+                            <hr style="background-color: var(--bs-primary-200)">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputTel">شماره تماس</label>
+                          <div class="input-group form-control formsStyle border-1 bg-transparent d-flex flex-row" dir="ltr" style="border-color: var(--bs-primary-100); align-items: center; white-space: nowrap;">
+                            <div class="input-group-addon me-2 d-inline-block">
+                              <img src="./img/svg/iranFlag.svg" alt=""> 
+                            </div>
+                            <input type="tel" class="border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="09123456789">
+                          </div>
+                        </div>
+                        <button type="submit" class="btn formBtn formsStyle exRegPhone text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ادامه</button>
+                    </fieldset>
+                    <fieldset class="ownerInfo d-flex flex-column align-items-center formContentClr">
+                        <div class="form-group">
+                          <label for="exampleInputTxt">نام و نام خانوداگی</label>
+                          <input type="text" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="exampleInputTel">شماره تماس</label>
+                                <div class="input-group form-control formsStyle border-1 bg-transparent d-flex flex-row" dir="ltr" style="border-color: var(--bs-primary-100); align-items: center; white-space: nowrap;">
+                                  <div class="input-group-addon me-2 d-inline-block">
+                                    <img src="./img/svg/iranFlag.svg" alt=""> 
+                                  </div>
+                                  <input type="tel" class="border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="09123456789">
+                                </div>
+                              </div>
+                        </div>
+                  
+                        <div class="form-group">
+                          <label for="exampleInputNatId">شماره ملی / گذرنامه</label>
+                          <input type="tel" class="form-control formsStyle border-1 bg-transparent" style="direction: ltr; border-color: var(--bs-primary-100)" id="exampleInputNatId" >
+                        </div>
+                        
+                        <div class="form-group ">
+                          <label for="exampleInputEmail1">ایمیل</label>
+                          <input type="email" class="form-control formsStyle border-1 bg-transparent" id="exampleInputEmail1" style="direction: ltr; border-color: var(--bs-primary-100)" aria-describedby="emailHelp" placeholder="example@gmail.com">
+                        </div>
+                
+                        <div class="form-group">
+                          <label for="birthData">تاریخ تولد</label>
+                          <div class="formsStyle d-flex flex-row justify-content-between align-items-center my-2" id="birthData">
+                            <div class="my-2">
+                              <label for="day">روز</label>
+                            <select class="form-control  border-1 bg-transparent"  id="day" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                              <option selected> 1</option>
+                              <option value="1">2</option>
+                              <option value="2">3</option>
+                              <option value="3"> 4</option>
+                            </select>
+                            </div>
+                            <div class="my-2">
+                              <label for="month">ماه</label>
+                              <select class="form-control  border-1 bg-transparent"  id="month" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                                <option selected> 1</option>
+                                <option value="1">2</option>
+                                <option value="2">3</option>
+                                <option value="3">4</option>
+                              </select>
+                            </div>
+                            <div class="my-2">
+                              <label for="year">سال</label>
+                              <select class="form-control  border-1 bg-transparent my-1"  id="year" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                                <option selected>1385</option>
+                                <option value="1">1384</option>
+                                <option value="2">1376</option>
+                                <option value="3">1301</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <button type="submit" class="btn enterWonerInfoSaveBtn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ادامه</button>
+                        <button type="submit" class="btn enterWonerInfoBackBtn formBtn formsStyle bg-transparent" style="border-color: var(--bs-natural-200) !important; color: var(--bs-natural-200) !important;"> برگشت به مرحله قبل</button>
+                    </fieldset>
+                    <fieldset class="exhabitInfo d-flex flex-column align-items-center formContentClr">
+                        <div class="form-group">
+                            <label for="exampleInputTxt">نام نمایشگاه</label>
+                            <input type="text" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                        </div>
+                        <div class="form-group">
+                            <label for="selectCarBrand">استان</label>
+                            <select class="form-control formsStyle border-1 bg-transparent"  id="selectCarBrand" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                              <option value="0" selected>بوشهر</option>
+                              <option value="1">تهران</option>
+                              <option value="2">فارس</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectCarBrand">شهر</label>
+                            <select class="form-control formsStyle border-1 bg-transparent"  id="selectCarBrand" aria-label=".form-select-lg example"  style="border-color: var(--bs-primary-100); color: var(--bs-natural-200);">
+                              <option value="0" selected>شیراز</option>
+                              <option value="1">کازرون</option>
+                              <option value="2">مرودشت</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputTxt">آدرس نمایشگاه</label>
+                            <input type="text" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="exampleInputTel">شماره تماس ثابت</label>
+                                <div class="input-group form-control formsStyle border-1 bg-transparent d-flex flex-row" dir="ltr" style="border-color: var(--bs-primary-100); align-items: center; white-space: nowrap;">
+                                  <div class="input-group-addon me-2 d-inline-block">
+                                    <img src="./img/svg/iranFlag.svg" alt=""> 
+                                  </div>
+                                  <input type="tel" class="border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="02123456789">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputTxt">شماره ثبت</label>
+                            <input type="text" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                        </div>
+                        <button type="submit" class="btn exhabitinfoSaveBtn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ثبت اطلاعات</button>
+                        <button type="submit" class="btn exhabitInfoBackBtn formBtn formsStyle bg-transparent" style="border-color: var(--bs-natural-200) !important; color: var(--bs-natural-200) !important;"> برگشت به مرحله قبل</button>
+                    </fieldset>
+                    <fieldset class="contract d-flex flex-column align-items-center formContentClr">
+                        <object type="application/pdf"
+                            data="./hw11.pdf"
+                            width="20rem"
+                            height="20rem">
+                        </object>
+                        <div class="form-group">
+                            <div class="form-check form-check-inline my-2">"
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                              <label class="form-check-label" for="inlineRadio1">با قوانین و مقررات موافقم</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ادامه</button>
+                        <button type="submit" class="btn formBtn formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                    </fieldset>
+                    <fieldset  class="uploadDocuments d-flex flex-column align-items-center formContentClr">
+                        <p>اطلاعات شما به هیچ وجه به دیگران نمایش داده نمیشود</p>
+                        <div class="form-group ">
+                            <label for="adImgs">اسمکن کارت ملی خود را بارگذاری کنید</label>
+                            <div class="Neon Neon-theme-dragdropbox bg-transparent ">
+                              <input style="z-index: 999; opacity: 0; width: 7.25rem; height :7.25rem; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file" >
+                              <div class="Neon-input-dragDrop">
+                                <span class="Neon-input-inner">+</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="adImgs">اسکن پروانه کسب خود را بارگذاری کنید</label>
+                            <div class="Neon Neon-theme-dragdropbox bg-transparent ">
+                              <input style="z-index: 999; opacity: 0; width: 7.25rem; height :7.25rem; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file" >
+                              <div class="Neon-input-dragDrop">
+                                <span class="Neon-input-inner">+</span>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="adImgs"> در صورتی که نمایشگاه شما دارای لوگو است آن را در این قسمت بارگذاری کنید</label>
+                            <div class="Neon Neon-theme-dragdropbox bg-transparent ">
+                              <input style="z-index: 999; opacity: 0; width: 7.25rem; height :7.25rem; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file" >
+                              <div class="Neon-input-dragDrop">
+                                <span class="Neon-input-inner">+</span>
+                              </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ثبت مدارک</button>
+                        <button type="submit" class="btn formBtn formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                    </fieldset>
+                    <fieldset class="exhabitBioFrom d-flex flex-column align-items-center formContentClr">
+                        <div class="form-group">
+                            <label for="textArea">توضیحات</label>
+                            <div>
+                              <textarea name="bio" id="" cols="58" rows="5" class="bg-transparent" style="border-color: var(--bs-primary-100); border-radius: 0.625rem;"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn formBtn  formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ثبت نمایشگاه</button>
+                        <button type="submit" class="btn formBtn  formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                    </fieldset>
+                </form>
+            </div>
+            <!--saved Ads-->
+            <div class=" savedAds d-flex flex-column mx-lg-5 mx-md-4 mx-sm-3 panelContentClr">
+                <h2 class="sectionTitles mx-3 my-5"><span class="mx-auto"> آگهی های ذخیره شده</span></h2>
+                <div class="container">
+                    <div class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <!-- 1 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/206.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">206تیپ3</h4>
+                                                <p class="fw-regular text-natural-200">250/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1398</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 12/000</p>
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                                        <p class="fw-light text-black fs-5 "> برند : پژو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center ">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                
+            
+                                </li>
+            
+                                <!-- 2 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car d-none d-lg-block text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/206_2.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">206 تیپ5</h4>
+                                                <p class="fw-regular text-natural-200">300/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1395</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 2/000</p>
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> برند : پژو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center ">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 3 -->
+                                <li class="splide__slide"> 
+                                    <a href="" class="car text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/سمند.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300"> سورن پلاس</h4>
+                                                <p class="fw-regular text-natural-200">200/000/000T</p>
+                                            </div>
+                    
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                    
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1398</p>
+                                                    </div>
+                    
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 10/000</p>
+                                                    </div>
+                    
+                                                </div>
+                    
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                    
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> بیمه : ندارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> برند : ایرانخودرو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                    
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+            
+                                <!-- 4 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car d-none d-lg-block  text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/207.webp" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">پژو207</h4>
+                                                <p class="fw-regular text-natural-200">450/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1400</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 200</p>
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> برند : پژو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 5 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/پراید.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">پراید 111</h4>
+                                                <p class="fw-regular text-natural-200">100/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1395</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 12/000</p>
+                                
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> برند : سایپا </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 6 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car d-none d-lg-block text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/دنا.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">دناپلاس</h4>
+                                                <p class="fw-regular text-natural-200">450/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1398</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 100</p>
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> برند : ایرانخودرو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 7 -->
+                                <li class="splide__slide">
+                                        <a href="" class="car text-decoration-none">
+                                            <div class="position-relative porduct-card rounded shadow ">
+                                                <!-- Bookmark Icon -->
+                                                <div class="d-flex bookmark-icon shadow">
+                                                    <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                                </div>
+                                                <!-- Car Title & Price -->
+                                                <img src="./img/khodro/دناپلاس.jpg" alt="machine" class="rounded-top  w-100">
+                                                <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                    <h4 class="fw-bold text-natural-300">دنا توربو</h4>
+                                                    <p class="fw-regular text-natural-200">450/000/000T</p>
+                                                </div>
+                                
+                                                <!-- Car Details -->
+                                                <div class="d-flex align-items-baseline">
+                                                    <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                            <p class="fw-light text-black fs-5 "> مدل : 1398</p>
+                                                        </div>
+                                
+                                                        <div class="d-flex mt-3 align-items-center">
+                                                            <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                
+                                                            <p class="fw-light text-black fs-5 "> کارکرد : 500</p>
+                                                        </div>
+                                
+                                                    </div>
+                                
+                                                    <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                            <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                        </div>
+                                                        <div class="d-flex mt-3 align-items-center">
+                                                            <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                            <p class="fw-light text-black fs-5 "> برند : ایرانخودرو </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                
+                                                <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                                <!-- phone number & Exhibition -->
+                                                <div class="d-flex  me-4 align-items-center">
+                                                    <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                                    <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                    <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                </li>
+            
+                                <!-- 8 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car d-none d-lg-block text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/کوییک.webp" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">کوییک</h4>
+                                                <p class="fw-regular text-natural-200">190/000/000T</p>
+                                            </div>
+                    
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                    
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1394</p>
+                                                    </div>
+                    
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 2/000</p>
+                                                    </div>
+                    
+                                                </div>
+                    
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                    
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> برند : سایپا </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                    
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center ">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 9 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car item text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/رانا.webp" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">رانا</h4>
+                                                <p class="fw-regular text-natural-200">150/000/000T</p>
+                                            </div>
+                        
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                        
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                        
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1398</p>
+                                                    </div>
+                        
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                        
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 12/000</p>
+                                                    </div>
+                        
+                                                </div>
+                        
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                        
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                        
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                        
+                                                        <p class="fw-light text-black fs-5 "> برند : سایپا </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                        
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                        
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                        
+                        
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 10 -->
+                                <li class="splide__slide ">
+                                    <a href="" class="car d-none d-lg-block text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/دناپلاس.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">دناپلاس</h4>
+                                                <p class="fw-regular text-natural-200">400/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1396</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 8/000</p>
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : ندارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> برند : ایرانخودرو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--last seens-->
+            <div class=" lastSeen d-flex flex-column mx-lg-5 mx-md-4 mx-sm-3 panelContentClr">
+                <h2 class="sectionTitles mx-3 my-5"><span class="mx-auto">بازدید های اخیر</span></h2>
+                <div class="container">
+                    <div class="splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <!-- 1 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/206.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">206تیپ3</h4>
+                                                <p class="fw-regular text-natural-200">250/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1398</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 12/000</p>
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                                        <p class="fw-light text-black fs-5 "> برند : پژو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center ">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                
+            
+                                </li>
+            
+                                <!-- 2 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car d-none d-lg-block text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/206_2.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">206 تیپ5</h4>
+                                                <p class="fw-regular text-natural-200">300/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1395</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 2/000</p>
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> برند : پژو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center ">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 3 -->
+                                <li class="splide__slide"> 
+                                    <a href="" class="car text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/سمند.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300"> سورن پلاس</h4>
+                                                <p class="fw-regular text-natural-200">200/000/000T</p>
+                                            </div>
+                    
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                    
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1398</p>
+                                                    </div>
+                    
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 10/000</p>
+                                                    </div>
+                    
+                                                </div>
+                    
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                    
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> بیمه : ندارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> برند : ایرانخودرو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                    
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+            
+                                <!-- 4 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car d-none d-lg-block  text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/207.webp" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">پژو207</h4>
+                                                <p class="fw-regular text-natural-200">450/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1400</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 200</p>
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> برند : پژو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 5 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/پراید.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">پراید 111</h4>
+                                                <p class="fw-regular text-natural-200">100/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1395</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 12/000</p>
+                                
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> برند : سایپا </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 6 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car d-none d-lg-block text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/دنا.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">دناپلاس</h4>
+                                                <p class="fw-regular text-natural-200">450/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1398</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 100</p>
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> برند : ایرانخودرو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 7 -->
+                                <li class="splide__slide">
+                                        <a href="" class="car text-decoration-none">
+                                            <div class="position-relative porduct-card rounded shadow ">
+                                                <!-- Bookmark Icon -->
+                                                <div class="d-flex bookmark-icon shadow">
+                                                    <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                                </div>
+                                                <!-- Car Title & Price -->
+                                                <img src="./img/khodro/دناپلاس.jpg" alt="machine" class="rounded-top  w-100">
+                                                <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                    <h4 class="fw-bold text-natural-300">دنا توربو</h4>
+                                                    <p class="fw-regular text-natural-200">450/000/000T</p>
+                                                </div>
+                                
+                                                <!-- Car Details -->
+                                                <div class="d-flex align-items-baseline">
+                                                    <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                            <p class="fw-light text-black fs-5 "> مدل : 1398</p>
+                                                        </div>
+                                
+                                                        <div class="d-flex mt-3 align-items-center">
+                                                            <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                
+                                                            <p class="fw-light text-black fs-5 "> کارکرد : 500</p>
+                                                        </div>
+                                
+                                                    </div>
+                                
+                                                    <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                            <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                        </div>
+                                                        <div class="d-flex mt-3 align-items-center">
+                                                            <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                            <p class="fw-light text-black fs-5 "> برند : ایرانخودرو </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                
+                                                <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                                <!-- phone number & Exhibition -->
+                                                <div class="d-flex  me-4 align-items-center">
+                                                    <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                                    <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                    <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                </li>
+            
+                                <!-- 8 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car d-none d-lg-block text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/کوییک.webp" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">کوییک</h4>
+                                                <p class="fw-regular text-natural-200">190/000/000T</p>
+                                            </div>
+                    
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                    
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1394</p>
+                                                    </div>
+                    
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 2/000</p>
+                                                    </div>
+                    
+                                                </div>
+                    
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                    
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                        <p class="fw-light text-black fs-5 "> برند : سایپا </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                    
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                    
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center ">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                    
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 9 -->
+                                <li class="splide__slide">
+                                    <a href="" class="car item text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/رانا.webp" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">رانا</h4>
+                                                <p class="fw-regular text-natural-200">150/000/000T</p>
+                                            </div>
+                        
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                        
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                        
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1398</p>
+                                                    </div>
+                        
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                        
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 12/000</p>
+                                                    </div>
+                        
+                                                </div>
+                        
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                        
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                        
+                                                        <p class="fw-light text-black fs-5 "> بیمه : دارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                        
+                                                        <p class="fw-light text-black fs-5 "> برند : سایپا </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                        
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                        
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                        
+                        
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <!-- 10 -->
+                                <li class="splide__slide ">
+                                    <a href="" class="car d-none d-lg-block text-decoration-none">
+                                        <div class="position-relative porduct-card rounded shadow ">
+                                            <!-- Bookmark Icon -->
+                                            <div class="d-flex bookmark-icon shadow">
+                                                <img src="./img/svg/bookmark 1.svg" alt="bookmark icon" class="align-self-center mx-auto">
+                                
+                                            </div>
+                                            <!-- Car Title & Price -->
+                                            <img src="./img/khodro/دناپلاس.jpg" alt="machine" class="rounded-top  w-100">
+                                            <div class="d-flex justify-content-around align-items-baseline mt-3">
+                                                <h4 class="fw-bold text-natural-300">دناپلاس</h4>
+                                                <p class="fw-regular text-natural-200">400/000/000T</p>
+                                            </div>
+                                
+                                            <!-- Car Details -->
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/carModel.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> مدل : 1396</p>
+                                                    </div>
+                                
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/karkard.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> کارکرد : 8/000</p>
+                                                    </div>
+                                
+                                                </div>
+                                
+                                                <div class="d-flex flex-column w-100 mt-3 me-4">
+                                
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="./img/svg/Bimeh.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> بیمه : ندارد</p>
+                                                    </div>
+                                                    <div class="d-flex mt-3 align-items-center">
+                                                        <img src="./img/svg/brand.svg" alt="icon" class="mx-2 icon-12">
+                                
+                                                        <p class="fw-light text-black fs-5 "> برند : ایرانخودرو </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                
+                                            <hr class="w-90 text-natural-100 mx-auto">
+                                
+                                            <!-- phone number & Exhibition -->
+                                            <div class="d-flex  me-4 align-items-center">
+                                                <img src="./img/svg/exhibition.svg" alt="icon" class="mx-2 icon-12">
+                                                <p class="fw-bold text-primary-300 fs-6">نمایشگاه ماشین جعفری</p>
+                                                <p class="fw-bold text-primary-300 fs-5 me-5 ltr-dir">0991 475 4423</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    
+    <footer class="smalFooter">
+    </footer> 
+    <script src="./js/userPanel.js"></script>
+    <script src="./js/splide/splide-costom.js"></script>
+    <script src="./js/filterSearch.js"></script>
 </body>
 </html>

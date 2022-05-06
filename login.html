@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/forms.css">
     <title>login</title>
 </head>
 <body>
-    <main class="d-flex">
+    <main>
         <section class="smtop justify-content-center pt-2" style = "background-color: var(--bs-primary-200);">
             <div class="d-flex flex-column  align-items-center">
                 <p class="reg25 text-white">توربوکار</p>
                 <p class="fs-5 fw-regular text-white">سامانه آنلاین خرید و فروش خودرو</p>
                 <hr class="bg-white col-12 hrSide">
             </div>
-        </section>
+        </section> 
         <section class="d-flex flex-column sidebar col-lg-4 col-md-4" style = "background-color: var(--bs-primary-200);">
             <div class="d-flex flex-column  align-items-center">
                 <p class="reg25 text-white">توربوکار</p>
@@ -27,7 +28,39 @@
                 <img src="./img/svg/sideCarphoto.svg" alt="sideCarphoto" class="sideCarphoto" >
             </div>
         </section>
-        <section class="loginPart d-flex flex-column col-lg-8 col-md-8 col-xxl-8 col-xl-8 col-sm-8 align-items-center yMargin">   
+        <section class="loginPart d-flex flex-column col-lg-8 col-md-8 col-xxl-8 col-xl-8 col-sm-8 align-items-center yMargin"> 
+            <!-- form 1-->
+            <div class="form1">
+                <div class="pb-5 loginTitrPart">
+                    <p class="loginTitr" style="color: var(--bs-primary-200)">لطفا برای ورود شماره تلفن خود را وارد کنید </p>
+                    <hr style="background-color: var(--bs-primary-200)">
+                </div>
+                <form>
+                    <fieldset class="loginPHoneEnter">
+                        <div class="form-group">
+                          <label for="exampleInputTel">شماره تماس</label>
+                          <div class="input-group form-control formsStyle border-1 bg-transparent d-flex flex-row" dir="ltr" style="border-color: var(--bs-primary-100); align-items: center; white-space: nowrap;">
+                            <div class="input-group-addon me-2 d-inline-block">
+                              <img src="./img/svg/iranFlag.svg" alt=""> 
+                            </div>
+                            <input type="tel" class="phoneInput border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="09123456789">
+                            <small class="phNResponseMsg"></small>
+                          </div>
+                        </div>
+                        <button type="submit" class="phoneNumInptbtn btn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;"> وارد شوید</button>
+                      </fieldset>
+                </form>
+            </div>
+            <!-- form 2-->
+            <form class="form2" style="display: none;"> 
+                <div class="codeInterForm  form-group d-flex flex-column">
+                    <label for="exampleInputTxt">لطفا  کد ارسال شده را وارد کنید</label>
+                    <small style="color:var(--bs-primary-200); display: inline-block; margin-bottom: 1rem;" class="codeInterEditeNumField">ویرایش شماره</small>
+                    <input type="number" class=" codeInterFormInput form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt" placeholder="- - - - - -">
+                    <small style="margin-top: 1rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto;" class="codeInterFormCounter">30</small>
+                    <button type="submit" class="codeInterFormBtn btn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ثبت کد</button>
+                </div>
+            </form>
         </section>
     </main>
     <script src="./js/login.js"></script>
