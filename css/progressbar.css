@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+}
+
+.contain{
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.progres-contain{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 100%;
+
+}
+.Exprogres-contain{
+    display: flex;
+    justify-content:space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 100%;
+}
+.progres-contain::before , .Exprogres-contain::before{
+    content: '';
+    background-color: #efefef;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+    
+}
+.progres , .Exprogres{
+    background-color: #0DA338;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 00%;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+.circle , .Excircle{
+background-color: #fff;
+color: #999;
+border-radius: 50%;
+height: 40px;
+width: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 2px solid #efefef;
+
+transition: 0.4s ease;
+}
+.circle.activeS , .Excircle.ExactiveS{
+    border-color: #0DA338;
+}
+
+.titels , .Extitels{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 100%;
+}
+.activTitel , .ExactivTitel{
+    color: #0DA338;
+}
+.btns{
+    background-color: #0DA338;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+.btns:disabled{
+    background-color: #808080;
+    cursor: not-allowed;
+
+}
+.btns:focus{
+    outline: 0 ;
+}
+.btns.activeS{
+    transform: scale(0.98);
+}

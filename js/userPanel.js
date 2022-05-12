@@ -8,6 +8,7 @@ let sidebar = document.querySelector('.sidebar');
 let sideMenu = document.querySelector('.sideMenu');
 let panelContent = document.querySelector('.panelContent');
 let beforAnyAct = document.querySelector('.beforAnyAct');
+let ownerLogin = document.querySelector('.ownerLogin');
 let userInfoForm = document.querySelector('.userInfoForm');
 let carExhabitionInfo = document.querySelector('.carExhabitionInfo');
 let EditeUserInfoForm = document.querySelector('.EditeUserInfoForm');
@@ -29,9 +30,27 @@ let savedAds = document.querySelector('.savedAds');
 let lastSeen = document.querySelector('.lastSeen');
 let exhabitRegisterForms = document.querySelector('.exhabitRegisterForms');
 let loginPHoneEnter      = document.querySelector('.loginPHoneEnter');
+let phoneInput = document.querySelector('.phoneInput');
+ //phone code enter
+let loginCondeEnter = document.querySelector('.loginCondeEnter');
+let codeInterForm = document.querySelector('.codeInterForm');
+let codeInterEditeNumField = document.querySelector('.codeInterEditeNumField');
+let codeInterFormCounter = document.querySelector('.codeInterFormCounter');
+let codeInterFormInput = document.querySelector('.codeInterFormInput');
+ //
+let resendCodeFormBtn = document.createElement('button');
+resendCodeFormBtn.className = "border-0 my-4 align-items-center formsStyle";
+resendCodeFormBtn.style = "background-color: var(--bs-secondary-100); color : white";
+resendCodeFormBtn.type = "submit";
+resendCodeFormBtn.innerHTML = "ارسال دوباره کد";
+//
+
 let ownerInfo   = document.querySelector('.ownerInfo');
 let exhabitInfo = document.querySelector('.exhabitInfo');
 let contract    = document.querySelector('.contract');
+let uploadDocuments = document.querySelector('.uploadDocuments');
+let exhabitBioFrom = document.querySelector('.exhabitBioFrom');
+let afterExhabitRegister = document.querySelector('.afterExhabitRegister');
 
 
         //sidebar options
@@ -99,7 +118,27 @@ let inputValidatorCAE = {
     //'carPic' : false ,
     'carPrice' : false,
     
-}
+};
+
+        //exhabition register
+
+    //form1
+let ownerInfoINputs = document.querySelectorAll('.ownerInfo .form-group input , .ownerInfo .form-group .input-group input');
+let inputValidatorEUR = {
+    'name' : false,
+    'phone' : false,
+    'nationalID' : false,
+    'email' : false,
+};
+
+    //form2
+let exhabitInfoINputs = document.querySelectorAll('.exhabitInfo .form-group input , .exhabitInfo .form-group .input-group input');
+let inputValidatorEER = {
+    'exhabitName' : false,
+    'exhabitAddress' : false,
+    'exhabitPhone' : false,
+    'docNum' : false,
+};
 
 //_________buttons_________
         //infos
@@ -127,10 +166,32 @@ let manageAdBtn = document.querySelector('.manageAdBtn');
         //car exhabition register
 let registerExhabit = document.querySelector('.registerExhabit');
 let exRegPhone = document.querySelector('.exRegPhone');
-let enterWonerInfoSaveBtn = document.querySelector('.enterWonerInfoSaveBtn');
-let enterWonerInfoBackBtn = document.querySelector('.enterWonerInfoBackBtn');
+let codeInterFormBtn = document.querySelector('.codeInterFormBtn') ;
+let enterOwnerInfoSaveBtn = document.querySelector('.enterOwnerInfoSaveBtn');
+let enterOwnerInfoBackBtn = document.querySelector('.enterOwnerInfoBackBtn');
 let exhabitinfoSaveBtn = document.querySelector('.exhabitinfoSaveBtn');
 let exhabitInfoBackBtn = document.querySelector('.exhabitInfoBackBtn');
+let contractSaveBtn = document.querySelector('.contractSaveBtn');
+let contractBackBtn = document.querySelector('.contractBackBtn');
+let RegUploadDocSaveBtn = document.querySelector('.RegUploadDocSaveBtn');
+let RegUploadDocBackBtn = document.querySelector('.RegUploadDocBackBtn');
+let RegExhabitBioSaveBtn = document.querySelector('.RegExhabitBioSaveBtn');
+let RegExhabitBioBackBtn = document.querySelector('.RegExhabitBioBackBtn');
+let contractAgreement = document.querySelector('.contractAgreement')
+
+//____progress bar______
+const progres = document.getElementById('progres');
+const prevBtns = document.querySelectorAll('.preBtn');
+const nextBtns = document.querySelectorAll('.nextBtn');
+const circles = document.querySelectorAll('.circle');
+const allTietls = document.querySelectorAll('.titel');
+
+const Exprogres = document.getElementById('Exprogres');
+const ExprevBtns = document.querySelectorAll('.ExpreBtn');
+const ExnextBtns = document.querySelectorAll('.ExnextBtn');
+const Excircles = document.querySelectorAll('.Excircle');
+const ExallTietls = document.querySelectorAll('.Extitel');
+
 
 //_____functions of collapsed sidebar or any overlay collapsed element_____
 
@@ -286,7 +347,7 @@ lastSeenSideOption.addEventListener('click',(e)=>{
 });
 
 //exit
-//canr exite using window.close due to security rules
+//cant exite using window.close due to security rules
 exiteSideOption.addEventListener('click',()=>{
     let sideMenuChild = sideMenu.children;
     for (let i = 0; i < sideMenuChild.length; i++) {
@@ -302,6 +363,103 @@ exiteSideOption.addEventListener('click',()=>{
     },1500);
 });
 
+
+//_________progress bar functions_______
+        //car Ad progress bar
+let currentActive= 1;
+nextBtns.forEach((next) => {
+    next.addEventListener('click',function(e){
+        e.preventDefault()
+        currentActive++;
+        if(currentActive > circles.length){
+            currentActive =circles.length;
+        }
+        update();
+        console.log(currentActive)
+    })
+});
+
+prevBtns.forEach((prev)=>{
+    prev.addEventListener('click',function(e){
+        e.preventDefault();
+        currentActive--;
+        if(currentActive <1){
+            currentActive =1;
+        }
+        
+        update();
+    })
+});
+
+
+function update(){
+    circles.forEach((circle, idx)=>{
+        if(idx < currentActive){
+            circle.classList.add('activeS');
+        }else {
+            circle.classList.remove('activeS')
+        }
+    });
+    allTietls.forEach((titel, idx)=>{
+        if(idx < currentActive){
+            titel.classList.add('activTitel');
+        }else {
+            titel.classList.remove('activTitel')
+        }
+    })
+
+    const activTitels = document.querySelectorAll('.activTitel');
+    progres.style.width=((activTitels.length -1) / (allTietls.length-1))*100 + '%';
+
+};
+
+    //exhabition register progressbar
+let EXcurrentActive= 1;
+ExnextBtns.forEach((next) => {
+    next.addEventListener('click',function(e){
+        e.preventDefault()
+        currentActive++;
+        if(currentActive > Excircles.length){
+            currentActive =Excircles.length;
+        }
+        EXupdate();
+        console.log(currentActive)
+    })
+});
+
+ExprevBtns.forEach((prev)=>{
+    prev.addEventListener('click',function(e){
+        e.preventDefault();
+        currentActive--;
+        if(currentActive <1){
+            currentActive =1;
+        }
+        
+        EXupdate();
+    })
+});
+
+
+function EXupdate(){
+    Excircles.forEach((circle, idx)=>{
+        if(idx < currentActive){
+            circle.classList.add('ExactiveS');
+        }else {
+            circle.classList.remove('ExactiveS')
+        }
+    });
+    ExallTietls.forEach((titel, idx)=>{
+        if(idx < currentActive){
+            titel.classList.add('ExactivTitel');
+        }else {
+            titel.classList.remove('ExactivTitel')
+        }
+    });
+
+    const ExactivTitels = document.querySelectorAll('.ExactivTitel');
+    Exprogres.style.width=((ExactivTitels.length -1) / (ExallTietls.length-1))*100 + '%';
+
+};
 
 //_________edit userinfo actions_______
 userInfoEditeBtn.addEventListener('click',(e)=>{
@@ -610,6 +768,8 @@ carAdForm2RegBtn.addEventListener('click',(e)=>{
         carAdForm1.classList.replace('formContentClr','formContentLoad');
         registerAD.classList.replace('panelContentLoad','panelContentClr');
         manageAD.classList.replace('panelContentClr','panelContentLoad');
+        currentActive = 1;
+        update();
     },3000);
     carAdForm1INputs.forEach(input => {
         input.value = '';
@@ -638,36 +798,235 @@ manageAdBtn.addEventListener('click', (e)=>{
 registerExhabit.addEventListener('click', (e)=>{
     e.preventDefault();
     exhabitRegister.classList.replace('panelContentLoad' , 'panelContentClr');
-    exhabitRegisterForms.classList.replace('panelContentClr','panelContentLoad');
+    ownerLogin.classList.replace('panelContentClr','panelContentLoad');
     panelContent.scrollTop = 0;
 });
 
+    //phone number entering and getting code
+//sleep function is for make a delay between executing code lines. it must be in a scope 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+//this counter is for counting seconds for code entering form
+var GlobalToggelFlag = false;
+var reqAnimFramId = null;
+var timeTillStop = 0;
+// main counter function
+function counter(){
+    timeTillStop = 31;
+    let stop = false
+    function repetedCount(){
+        sleep(1000).then(()=>{
+            timeTillStop = timeTillStop - 1;
+            if(  timeTillStop>= 0  && stop == false){
+                codeInterFormCounter.innerHTML = timeTillStop;
+                requestAnimationFrame(repetedCount);
+            }
+            else{
+                stop = true;
+                codeInterForm.removeChild(codeInterFormBtn);
+                codeInterForm.appendChild(resendCodeFormBtn);
+                GlobalToggelFlag = false;
+            }
+        });
+        
+    }
+    requestAnimationFrame(repetedCount);
+   
+};
+
+phoneInput.addEventListener('keyup',(e)=>{
+    e.preventDefault();
+    if (phoneInput.value.length == 11){
+        exRegPhone.disabled = false;
+    };
+});
 exRegPhone.addEventListener('click', (e)=>{
     e.preventDefault();
-    loginPHoneEnter.classList.replace('formContentLoad','formContentClr');
-    ownerInfo.classList.replace('formContentClr','formContentLoad'); 
-    console.log(ownerInfo.classList);
-    panelContent.scrollTop = 0;
+    if (phoneInput.value.trim()) {
+        if (phoneInput.value.length == 11){
+            phoneInput.style = "border-color: var(--bs-secondary-200);"
+            //waite for 1 sec
+            sleep(2000).then(() => { 
+                //clear this form
+                loginPHoneEnter.classList.replace('formContentLoad','formContentClr');
+                loginCondeEnter.classList.replace('formContentClr','formContentLoad'); 
+                panelContent.scrollTop = 0;
+                counter();
+            });
+        } 
+     else {
+        phoneInput.style = "border-color: var(--bs-warning-100)";
+        }
+    }  
 });
 
-enterWonerInfoSaveBtn.addEventListener('click', (e)=>{
+codeInterFormInput.addEventListener('keyup',(e)=>{
+    e.preventDefault();
+    if (codeInterFormInput.value.length == 6){
+        codeInterFormBtn.disabled = false;
+    };
+
+});
+codeInterFormBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    if (codeInterFormInput.value.length == 6){
+        codeInterFormInput.style = "border-color: var(--bs-secondary-200); direction : ltr";
+        sleep(2000).then(() => {
+            loginCondeEnter.classList.replace('formContentLoad','formContentClr');
+            ownerLogin.classList.replace('panelContentLoad' , 'panelContentClr');
+            exhabitRegisterForms.classList.replace('panelContentClr','panelContentLoad');
+            ownerInfo.classList.replace('formContentClr','formContentLoad'); 
+            panelContent.scrollTop = 0;
+         });
+    }
+    else{
+        codeInterFormInput.style ="border-color: var(--bs-warning-100); direction : ltr"
+    }
+});
+
+resendCodeFormBtn.addEventListener('click', (e)=>{
+    codeInterForm.removeChild(resendCodeFormBtn);
+    codeInterFormBtn.disabled = true;
+    codeInterForm.appendChild(codeInterFormBtn);
+    counter();
+});
+
+codeInterEditeNumField.addEventListener('click' , (e)=>{
+    location.reload();
+});
+
+    //form1
+
+ownerInfoINputs.forEach((input) => {
+    input.addEventListener('change',(e)=>{
+        let name = e.target.getAttribute('name');
+        console.log(name, e.target.value.length);
+        if (e.target.value.length > 0){
+            console.log(name , 'true');
+            inputValidatorEUR[name] = true;
+        }
+        else{
+            console.log(name , 'false');
+            inputValidatorEUR[name] = false;
+        };
+        
+        let allTrue = Object.keys(inputValidatorEUR).every((item)=>{
+            console.log('item: ',item);
+            return inputValidatorEUR[item] === true
+        });
+        
+        if (allTrue){
+            enterOwnerInfoSaveBtn.disabled = false;
+        }
+        else{
+            enterOwnerInfoSaveBtn.disabled = true;
+        }
+    })
+});
+
+enterOwnerInfoSaveBtn.addEventListener('click' , (e)=>{
     e.preventDefault();
     ownerInfo.classList.replace('formContentLoad','formContentClr');
     exhabitInfo.classList.replace('formContentClr','formContentLoad');
     panelContent.scrollTop = 0;
 });
 
-enterWonerInfoBackBtn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    ownerInfo.classList.replace('formContentLoad','formContentClr');
-    loginPHoneEnter.classList.replace('formContentClr','formContentLoad'); 
-    panelContent.scrollTop = 0;
+enterOwnerInfoBackBtn.addEventListener('click' , (e)=>{
+    location.reload();
 });
 
-exhabitinfoSaveBtn.addEventListener('click', (e)=>{
+     //form2
+exhabitInfoINputs.forEach((input) => {
+    input.addEventListener('change',(e)=>{
+        let name = e.target.getAttribute('name');
+        console.log(name, e.target.value.length);
+        if (e.target.value.length > 0){
+            console.log(name , 'true');
+            inputValidatorEER[name] = true;
+        }
+        else{
+            console.log(name , 'false');
+            inputValidatorEER[name] = false;
+        };
+        
+        let allTrue = Object.keys(inputValidatorEER).every((item)=>{
+            console.log('item: ',item);
+            return inputValidatorEER[item] === true
+        });
+        
+        if (allTrue){
+            exhabitinfoSaveBtn.disabled = false;
+        }
+        else{
+            exhabitinfoSaveBtn.disabled = true;
+        }
+    })
+});
+   
+exhabitinfoSaveBtn.addEventListener('click' , (e)=>{
     e.preventDefault();
     exhabitInfo.classList.replace('formContentLoad','formContentClr');
     contract.classList.replace('formContentClr','formContentLoad');
-    console.log(contract.value);
     panelContent.scrollTop = 0;
+});
+
+    //form3
+contractAgreement.addEventListener('click',(e)=>{
+    e.preventDefault();
+    console.log('change')
+    if (contractSaveBtn.disabled == true){
+        contractSaveBtn.disabled = false;
+    }
+    else{
+        contractSaveBtn.disabled = true;
+    }
+});
+contractSaveBtn.addEventListener('click' , (e)=>{
+    e.preventDefault();
+    contract.classList.replace('formContentLoad','formContentClr');
+    uploadDocuments.classList.replace('formContentClr','formContentLoad');
+    panelContent.scrollTop = 0;
+});
+
+contractBackBtn.addEventListener('click' , (e)=>{
+    e.preventDefault();
+    contract.classList.replace('formContentLoad','formContentClr');
+    exhabitInfo.classList.replace('formContentClr','formContentLoad');
+    panelContent.scrollTop = 0;
+});
+
+ //form4
+RegUploadDocSaveBtn.addEventListener('click' , (e)=>{
+    e.preventDefault();
+    uploadDocuments.classList.replace('formContentLoad','formContentClr');
+    exhabitBioFrom.classList.replace('formContentClr','formContentLoad');
+    panelContent.scrollTop = 0;
+});
+
+RegUploadDocBackBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    uploadDocuments.classList.replace('formContentLoad','formContentClr');
+    contract.classList.replace('formContentClr','formContentLoad');
+    panelContent.scrollTop = 0;
+});
+
+ //form5
+let bioinput = document.querySelector('.bioinput');
+console.log(bioinput);
+bioinput.addEventListener('keypress',(e)=>{
+    e.preventDefault();
+    RegExhabitBioSaveBtn.disabled = false;
+});
+RegExhabitBioSaveBtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    exhabitBioFrom.classList.replace('formContentLoad','formContentClr');
+    afterExhabitRegister.classList.replace('formContentClr','formContentLoad');
+    setTimeout(()=>{
+        afterExhabitRegister.classList.replace('formContentLoad','formContentClr');
+        exhabitRegisterForms.classList.replace('panelContentLoad','panelContentClr');
+        beforAnyAct.classList.replace('panelContentClr', 'panelContentLoad');
+    },3000);
+
 });

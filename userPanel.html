@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/userPanel.css">
-    <link rel="stylesheet" href="./css/forms.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="./css/splide/splide.min.css">
     <script src="./js/splide/splide-extension-grid.min.js"></script>
     <script src="./js/splide/splide-extension-auto-scroll.min.js"></script>
     <script src="./js/splide/splide.min.js"></script>
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/userPanel.css">
+    <link rel="stylesheet" href="./css/forms.css">
+    <link rel="stylesheet" href="./css/progressbar.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 
     <title>userPanel</title>
 </head>
@@ -625,7 +626,24 @@
             <div class="registerAD panelContentClr mx-lg-5 mx-md-4 mx-sm-3 mb-5">
                 <h2 class="sectionTitles  mx-3 my-5"><span class="mx-auto registerADTitle"> ثبت آگهی خودرو</span></h2>
                 <div>
-                    <form class="AdEditForm container mt-5" style="width: fit-content;">
+                    <div class="container d-flex flex-column" dir="ltr" > 
+                        <div class="contain my-4" >
+                            <div class="progres-contain">
+                                <div class="progres" id="progres"></div>
+                                <div class="circle activeS">1</div>
+                                <div class="circle">2</div>
+                                <div class="circle">3</div>
+                            </div>
+                
+                            <div class="titels">
+                                <p class=" titel activTitel">مشخصات فنی خودرو</p>
+                                <p class=" titel">مشخصات آگهی</p>
+                                <p class=" titel">اعتبارسنجی و انتشار آگهی</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <form class=" AdEditForm container mt-5" style="width: fit-content;" id="msform">
                         <fieldset class="carAdForm1 formContentLoad">
                             <div class="form-group">
                               <label for="selectCarBrand">گروه بندی</label>
@@ -696,8 +714,8 @@
                               <label for="exampleInputTxt">مهلت بیمه </label>
                               <input type="text" name="insurance" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt" >
                             </div>
-                            <button type="submit" class="btn formBtn carAdForm1RegBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت اطلاعات</button>
-                            <button type="submit" class="btn formBtn carAdForm1BackBtn formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به آگهی ها</button>
+                            <button type="submit" class="btn formBtn carAdForm1RegBtn formsStyle text-white border-0 next nextBtn" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت اطلاعات</button>
+                            <button type="submit" class="btn formBtn carAdForm1BackBtn formsStyle  border-1 bg-transparent preBtn" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به آگهی ها</button>
                     
                         </fieldset>
                         <fieldset class="carAdForm2 formContentClr">
@@ -752,12 +770,15 @@
                                 <label class="form-check-label" for="inlineRadio1">فروش ویژه</label>
                               </div>
                             </div>
-                            <button type="submit" class="btn formBtn carAdForm2RegBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت اطلاعات</button>
-                            <button type="submit" class="btn formBtn carAdForm2BackBtn formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                            <button type="submit" class="btn formBtn carAdForm2RegBtn formsStyle text-white border-0 next nextBtn" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت اطلاعات</button>
+                            <button type="submit" class="btn formBtn carAdForm2BackBtn formsStyle  border-1 bg-transparent preBtn" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
                         </fieldset>
-                        <div class="afterAdRegister formContentClr border-2 rounded-2 bg-transparent align-self-center px-2 py-4"  style="border-color: var(--bs-secondary-200);">
-                            <p style="color: var(--bs-natural-100);">آگهی شما با موفقیت ثبت شد</p>
-                        </div>
+                        <fieldset>
+                            <div class="afterAdRegister formContentClr border-2 rounded-2 bg-transparent align-self-center px-2 py-4"  style="border-color: var(--bs-secondary-200);">
+                                <p style="color: var(--bs-natural-100);">آگهی شما با موفقیت ثبت شد</p>
+                                <p style="color: var(--bs-natural-100);">پس از تایید نمایش داده خواهد شد</p>
+                            </div>
+                        </fieldset>
                     </form>
                 </div>
             </div>
@@ -772,29 +793,59 @@
 
             </div>
             <!--register car forms-->
+            <!--login/register user-->
+            <div class="ownerLogin panelContentClr">
+                <fieldset class="loginPHoneEnter formContentLoad">
+                    <div class="pb-5 loginTitrPart">
+                        <p class="loginTitr" style="color: var(--bs-primary-200)">لطفا برای ورود شماره تلفن خود را وارد کنید </p>
+                        <hr style="background-color: var(--bs-primary-200)">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputTel">شماره تماس</label>
+                      <div class="input-group form-control formsStyle border-1 bg-transparent d-flex flex-row" dir="ltr" style="border-color: var(--bs-primary-100); align-items: center; white-space: nowrap;">
+                        <div class="input-group-addon me-2 d-inline-block">
+                          <img src="./img/svg/iranFlag.svg" alt=""> 
+                        </div>
+                        <input type="tel" class="phoneInput border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="09123456789">
+                      </div>
+                    </div>
+                    <button type="submit" class="btn formBtn formsStyle exRegPhone text-white border-0" style="background-color: var(--bs-secondary-100) !important;" disabled>ارسال کد</button>
+                </fieldset>
+                <fieldset class="loginCondeEnter d-flex flex-column align-items-center formContentClr">
+                    <div class="codeInterForm  form-group d-flex flex-column">
+                        <label for="exampleInputTxt">لطفا  کد ارسال شده را وارد کنید</label>
+                        <small style="color:var(--bs-primary-200); display: inline-block; margin-bottom: 1rem;" class="codeInterEditeNumField">ویرایش شماره</small>
+                        <input type="number" class=" codeInterFormInput form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" dir="ltr" id="exampleInputTxt" placeholder="- - - - - -">
+                        <small style="margin-top: 1rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto;" class="codeInterFormCounter">30</small>
+                        <button type="submit" class="codeInterFormBtn btn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت کد</button>
+                    </div>
+                </fieldset>
+            </div>
             <div  class="exhabitRegisterForms mx-lg-5 mx-md-4 mx-sm-3 panelContentClr">
-                
+                <h2 class="sectionTitles  mx-3 my-5"><span class="mx-auto registerADTitle">ثبت نمایشگاه</span></h2>
+               <div>
+                <div class="container d-flex flex-column" dir="ltr" > 
+                    <div class="contain my-4" >
+                        <div class="Exprogres-contain">
+                            <div class="Exprogres" id="Exprogres"></div>
+                            <div class="Excircle ExactiveS">1</div>
+                            <div class="Excircle">2</div>
+                            <div class="Excircle">3</div>
+                        </div>
+            
+                        <div class="Extitels">
+                            <p class=" Extitel ExactivTitel">ثبت اطلاعات  </p>
+                            <p class=" Extitel">بارگذاری مدارک</p>
+                            <p class="Extitel">اعتبارسنجی و ثبت نمایشگاه</p>
+                        </div>
+                        
+                    </div>
+                </div>
                 <form action=" " class="container mt-5" style="width: fit-content;">
-                    <fieldset class="loginPHoneEnter formContentLoad">
-                        <div class="pb-5 loginTitrPart">
-                            <p class="loginTitr" style="color: var(--bs-primary-200)">لطفا برای ورود شماره تلفن خود را وارد کنید </p>
-                            <hr style="background-color: var(--bs-primary-200)">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputTel">شماره تماس</label>
-                          <div class="input-group form-control formsStyle border-1 bg-transparent d-flex flex-row" dir="ltr" style="border-color: var(--bs-primary-100); align-items: center; white-space: nowrap;">
-                            <div class="input-group-addon me-2 d-inline-block">
-                              <img src="./img/svg/iranFlag.svg" alt=""> 
-                            </div>
-                            <input type="tel" class="border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="09123456789">
-                          </div>
-                        </div>
-                        <button type="submit" class="btn formBtn formsStyle exRegPhone text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ادامه</button>
-                    </fieldset>
                     <fieldset class="ownerInfo d-flex flex-column align-items-center formContentClr">
                         <div class="form-group">
                           <label for="exampleInputTxt">نام و نام خانوداگی</label>
-                          <input type="text" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                          <input type="text" name="name" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
                         </div>
                         
                         <div class="form-group">
@@ -804,19 +855,19 @@
                                   <div class="input-group-addon me-2 d-inline-block">
                                     <img src="./img/svg/iranFlag.svg" alt=""> 
                                   </div>
-                                  <input type="tel" class="border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="09123456789">
+                                  <input type="tel" name="phone" class="border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="09123456789">
                                 </div>
                               </div>
                         </div>
                   
                         <div class="form-group">
                           <label for="exampleInputNatId">شماره ملی / گذرنامه</label>
-                          <input type="tel" class="form-control formsStyle border-1 bg-transparent" style="direction: ltr; border-color: var(--bs-primary-100)" id="exampleInputNatId" >
+                          <input type="tel" name="nationalID" class="form-control formsStyle border-1 bg-transparent" style="direction: ltr; border-color: var(--bs-primary-100)" id="exampleInputNatId" >
                         </div>
                         
                         <div class="form-group ">
                           <label for="exampleInputEmail1">ایمیل</label>
-                          <input type="email" class="form-control formsStyle border-1 bg-transparent" id="exampleInputEmail1" style="direction: ltr; border-color: var(--bs-primary-100)" aria-describedby="emailHelp" placeholder="example@gmail.com">
+                          <input type="email" name="email" class="form-control formsStyle border-1 bg-transparent" id="exampleInputEmail1" style="direction: ltr; border-color: var(--bs-primary-100)" aria-describedby="emailHelp" placeholder="example@gmail.com">
                         </div>
                 
                         <div class="form-group">
@@ -851,13 +902,13 @@
                             </div>
                           </div>
                         </div>
-                        <button type="submit" class="btn enterWonerInfoSaveBtn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ادامه</button>
-                        <button type="submit" class="btn enterWonerInfoBackBtn formBtn formsStyle bg-transparent" style="border-color: var(--bs-natural-200) !important; color: var(--bs-natural-200) !important;"> برگشت به مرحله قبل</button>
+                        <button type="submit" class="btn enterOwnerInfoSaveBtn formBtn formsStyle text-white border-0 " style="background-color: var(--bs-secondary-100) !important;" disabled>ادامه</button>
+                        <button type="submit" class="btn enterOwnerInfoBackBtn formBtn formsStyle bg-transparent" style="border-color: var(--bs-natural-200) !important; color: var(--bs-natural-200) !important;"> برگشت به مرحله قبل</button>
                     </fieldset>
                     <fieldset class="exhabitInfo d-flex flex-column align-items-center formContentClr">
                         <div class="form-group">
                             <label for="exampleInputTxt">نام نمایشگاه</label>
-                            <input type="text" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                            <input type="text" name="exhabitName" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
                         </div>
                         <div class="form-group">
                             <label for="selectCarBrand">استان</label>
@@ -877,7 +928,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputTxt">آدرس نمایشگاه</label>
-                            <input type="text" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                            <input type="text" name="exhabitAddress" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
                         </div>
                         <div class="form-group">
                             <div class="form-group">
@@ -886,36 +937,34 @@
                                   <div class="input-group-addon me-2 d-inline-block">
                                     <img src="./img/svg/iranFlag.svg" alt=""> 
                                   </div>
-                                  <input type="tel" class="border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="02123456789">
+                                  <input type="tel" name="exhabitPhone" class="border-0 d-inline-block" style="align-items: center;" id="exampleInputTel" placeholder="02123456789">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputTxt">شماره ثبت</label>
-                            <input type="text" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
+                            <input type="text" name="docNum" class="form-control formsStyle border-1 bg-transparent" style="border-color: var(--bs-primary-100)" id="exampleInputTxt">
                         </div>
-                        <button type="submit" class="btn exhabitinfoSaveBtn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ثبت اطلاعات</button>
-                        <button type="submit" class="btn exhabitInfoBackBtn formBtn formsStyle bg-transparent" style="border-color: var(--bs-natural-200) !important; color: var(--bs-natural-200) !important;"> برگشت به مرحله قبل</button>
+                        <button type="submit" class="btn exhabitinfoSaveBtn formBtn formsStyle text-white border-0 Exnext ExnextBtn" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت اطلاعات</button>
+                        <button type="submit" class="btn exhabitInfoBackBtn formBtn formsStyle bg-transparent ExpreBtn" style="border-color: var(--bs-natural-200) !important; color: var(--bs-natural-200) !important;"> برگشت به مرحله قبل</button>
                     </fieldset>
                     <fieldset class="contract d-flex flex-column align-items-center formContentClr">
-                        <object type="application/pdf"
-                            data="./hw11.pdf"
-                            width="20rem"
-                            height="20rem">
-                        </object>
+                        <div class="align-items-center align-self-center" width="500px">
+                            <iframe src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="align-self-center" width="500px" height ="400px" style="margin-left: auto; margin-right: auto;"></iframe>
+                        </div>
                         <div class="form-group">
                             <div class="form-check form-check-inline my-2">"
-                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                              <input class="form-check-input contractAgreement" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
                               <label class="form-check-label" for="inlineRadio1">با قوانین و مقررات موافقم</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ادامه</button>
-                        <button type="submit" class="btn formBtn formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                        <button type="submit" class="btn contractSaveBtn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;" disabled>ادامه</button>
+                        <button type="submit" class="btn  contractBackBtn formBtn formsStyle  border-1 bg-transparent ExpreBtn" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
                     </fieldset>
                     <fieldset  class="uploadDocuments d-flex flex-column align-items-center formContentClr">
                         <p>اطلاعات شما به هیچ وجه به دیگران نمایش داده نمیشود</p>
                         <div class="form-group ">
-                            <label for="adImgs">اسمکن کارت ملی خود را بارگذاری کنید</label>
+                            <label for="adImgs">اسکن کارت ملی خود را بارگذاری کنید</label>
                             <div class="Neon Neon-theme-dragdropbox bg-transparent ">
                               <input style="z-index: 999; opacity: 0; width: 7.25rem; height :7.25rem; position: absolute; right: 0px; left: 0px; margin-right: auto; margin-left: auto;" name="files[]" id="filer_input2" multiple="multiple" type="file" >
                               <div class="Neon-input-dragDrop">
@@ -941,20 +990,27 @@
                               </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ثبت مدارک</button>
-                        <button type="submit" class="btn formBtn formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                        <button type="submit" class="btn RegUploadDocSaveBtn  formBtn formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ثبت مدارک</button>
+                        <button type="submit" class="btn RegUploadDocBackBtn formBtn formsStyle  border-1 bg-transparent " style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
                     </fieldset>
                     <fieldset class="exhabitBioFrom d-flex flex-column align-items-center formContentClr">
                         <div class="form-group">
                             <label for="textArea">توضیحات</label>
                             <div>
-                              <textarea name="bio" id="" cols="58" rows="5" class="bg-transparent" style="border-color: var(--bs-primary-100); border-radius: 0.625rem;"></textarea>
+                              <textarea name="bio" cols="58" rows="5" class="bg-transparent bioinput" style="border-color: var(--bs-primary-100); border-radius: 0.625rem;"></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="btn formBtn  formsStyle text-white border-0" style="background-color: var(--bs-secondary-100) !important;">ثبت نمایشگاه</button>
-                        <button type="submit" class="btn formBtn  formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                        <button type="submit" class="btn RegExhabitBioSaveBtn formBtn  formsStyle text-white border-0 Exnext ExnextBtn" style="background-color: var(--bs-secondary-100) !important;" disabled>ثبت نمایشگاه</button>
+                        <button type="submit" class="btn RegExhabitBioBackBtn formBtn  formsStyle  border-1 bg-transparent" style="border-color: var(--bs-natural-100)!important; color: var(--bs-natural-100) !important">برگشت به مرحله قبل</button>
+                    </fieldset>
+                    <fieldset>
+                        <div class="afterExhabitRegister formContentClr border-2 rounded-2 bg-transparent align-self-center px-2 py-4"  style="border-color: var(--bs-secondary-200);">
+                            <p style="color: var(--bs-natural-100);">نمایشگاه شما با موفقیت ثبت شد</p>
+                            <p style="color: var(--bs-natural-100);">پس از تایید در پنل  کاربری شما قابل دسترسی خواهد بود</p>
+                        </div>
                     </fieldset>
                 </form>
+               </div>
             </div>
             <!--saved Ads-->
             <div class=" savedAds d-flex flex-column mx-lg-5 mx-md-4 mx-sm-3 panelContentClr">
